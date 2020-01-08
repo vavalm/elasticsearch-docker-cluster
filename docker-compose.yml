@@ -1,0 +1,72 @@
+# run before: sysctl -w vm.max_map_count=262144
+
+version: '2.2'
+services:
+  elasticsearch_master:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.5.1
+    container_name: esmaster
+    environment:
+      - node.name=esmaster
+      - cluster.name=es-docker-cluster
+      - discovery.seed_hosts=esslave1,esslave2
+      - cluster.initial_master_nodes=esmaster,esslave1,esslave2
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - datamaster:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+    networks:
+      - elastic
+  esslave1:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.5.1
+    container_name: esslave1
+    environment:
+      - node.name=esslave1
+      - cluster.name=es-docker-cluster
+      - discovery.seed_hosts=esmaster,esslave2
+      - cluster.initial_master_nodes=esmaster,esslave1,esslave2
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - dataslave1:/usr/share/elasticsearch/data
+    networks:
+      - elastic
+  esslave2:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.5.1
+    container_name: esslave2
+    environment:
+      - node.name=esslave2
+      - cluster.name=es-docker-cluster
+      - discovery.seed_hosts=esmaster,esslave1
+      - cluster.initial_master_nodes=esmaster,esslave1,esslave2
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - dataslave2:/usr/share/elasticsearch/data
+    networks:
+      - elastic
+
+volumes:
+  datamaster:
+    driver: local
+  dataslave1:
+    driver: local
+  dataslave2:
+    driver: local
+
+networks:
+  elastic:
+    driver: bridge
