@@ -1,0 +1,900 @@
+2020-01-24 11:12:23,464 -not-actor-/PID:1 esrally.rally INFO OS [uname_result(system='Linux', node='54b9e5afceb2', release='5.3.0-26-generic', version='#28-Ubuntu SMP Wed Dec 18 05:37:46 UTC 2019', machine='x86_64', processor='')]
+2020-01-24 11:12:23,464 -not-actor-/PID:1 esrally.rally INFO Python [namespace(_multiarch='x86_64-linux-gnu', cache_tag='cpython-37', hexversion=50791408, name='cpython', version=sys.version_info(major=3, minor=7, micro=3, releaselevel='final', serial=0))]
+2020-01-24 11:12:23,465 -not-actor-/PID:1 esrally.rally INFO Rally version [1.4.0]
+2020-01-24 11:12:23,465 -not-actor-/PID:1 esrally.utils.net INFO Connecting directly to the Internet (no proxy support).
+2020-01-24 11:12:23,919 -not-actor-/PID:1 esrally.rally INFO Detected a working Internet connection.
+2020-01-24 11:12:23,921 -not-actor-/PID:1 esrally.rally INFO Actor system already running locally? [False]
+2020-01-24 11:12:23,921 -not-actor-/PID:1 esrally.actor INFO Starting actor system with system base [multiprocTCPBase] and capabilities [{'coordinator': True, 'ip': '127.0.0.1', 'Convention Address.IPv4': '127.0.0.1:1900'}].
+2020-01-24 11:12:23,964 -not-actor-/PID:10 root INFO ++++ Actor System gen (3, 9) started, admin @ ActorAddr-(T|:1900)
+2020-01-24 11:12:23,973 -not-actor-/PID:1 esrally.racecontrol INFO User specified pipeline [benchmark-only].
+2020-01-24 11:12:23,974 -not-actor-/PID:1 esrally.racecontrol INFO Using configured hosts [{'host': 'esmaster', 'port': 9200}, {'host': 'esslave1', 'port': 9200}, {'host': 'esslave2', 'port': 9200}]
+2020-01-24 11:12:23,974 -not-actor-/PID:1 esrally.actor INFO Joining already running actor system with system base [multiprocTCPBase].
+2020-01-24 11:12:23,976 ActorAddr-(T|:1900)/PID:10 esrally.actor INFO Capabilities [{'coordinator': True, 'ip': '127.0.0.1', 'Convention Address.IPv4': '127.0.0.1:1900', 'Thespian ActorSystem Name': 'multiprocTCPBase', 'Thespian ActorSystem Version': 2, 'Thespian Watch Supported': True, 'Python Version': (3, 7, 3, 'final', 0), 'Thespian Generation': (3, 9), 'Thespian Version': '1579864343952'}] match requirements [{'coordinator': True}].
+2020-01-24 11:12:23,976 ActorAddr-(T|:1900)/PID:10 esrally.actor INFO Capabilities [{'coordinator': True, 'ip': '127.0.0.1', 'Convention Address.IPv4': '127.0.0.1:1900', 'Thespian ActorSystem Name': 'multiprocTCPBase', 'Thespian ActorSystem Version': 2, 'Thespian Watch Supported': True, 'Python Version': (3, 7, 3, 'final', 0), 'Thespian Generation': (3, 9), 'Thespian Version': '1579864343952'}] match requirements [{'coordinator': True}].
+2020-01-24 11:12:23,984 ActorAddr-(T|:45103)/PID:12 esrally.client INFO Creating ES client connected to [{'host': 'esmaster', 'port': 9200}, {'host': 'esslave1', 'port': 9200}, {'host': 'esslave2', 'port': 9200}] with options [{'timeout': 60}]
+2020-01-24 11:12:23,985 ActorAddr-(T|:45103)/PID:12 esrally.client INFO SSL support: off
+2020-01-24 11:12:23,985 ActorAddr-(T|:45103)/PID:12 esrally.client INFO HTTP basic authentication: off
+2020-01-24 11:12:23,985 ActorAddr-(T|:45103)/PID:12 esrally.client INFO HTTP compression: off
+2020-01-24 11:12:24,86 ActorAddr-(T|:45103)/PID:12 esrally.actor INFO Automatically derived distribution version [7.5.1]
+2020-01-24 11:12:25,680 ActorAddr-(T|:45103)/PID:12 esrally.utils.process INFO Cloning into '/rally/.rally/benchmarks/tracks/default'...
+
+2020-01-24 11:12:25,691 ActorAddr-(T|:45103)/PID:12 esrally.utils.repo INFO Checking out [7] in [/rally/.rally/benchmarks/tracks/default] for distribution version [7.5.1].
+2020-01-24 11:12:25,711 ActorAddr-(T|:45103)/PID:12 esrally.utils.process INFO Switched to a new branch '7'
+Branch 7 set up to track remote branch 7 from origin.
+
+2020-01-24 11:12:25,712 ActorAddr-(T|:45103)/PID:12 esrally.utils.repo INFO Rebasing on [7] in [/rally/.rally/benchmarks/tracks/default] for distribution version [7.5.1].
+2020-01-24 11:12:25,885 ActorAddr-(T|:44339)/PID:76 esrally.actor INFO Received signal from race control to start engine.
+2020-01-24 11:12:25,735 ActorAddr-(T|:45103)/PID:12 esrally.utils.process INFO Already on '7'
+Your branch is up-to-date with 'origin/7'.
+
+2020-01-24 11:12:25,885 ActorAddr-(T|:44339)/PID:76 esrally.actor INFO Cluster will not be provisioned by Rally.
+2020-01-24 11:12:25,806 ActorAddr-(T|:45103)/PID:12 esrally.utils.process INFO Current branch 7 is up to date.
+
+2020-01-24 11:12:25,818 ActorAddr-(T|:45103)/PID:12 esrally.track.loader INFO Reading track specification file [/rally/.rally/benchmarks/tracks/default/percolator/track.json].
+2020-01-24 11:12:25,860 ActorAddr-(T|:45103)/PID:12 esrally.track.loader INFO Final rendered track for '/rally/.rally/benchmarks/tracks/default/percolator/track.json' has been written to '/tmp/tmpprqri16m.json'.
+2020-01-24 11:12:25,868 ActorAddr-(T|:45103)/PID:12 esrally.track.loader INFO Loading template [definition for index queries in index.json].
+2020-01-24 11:12:25,873 ActorAddr-(T|:45103)/PID:12 esrally.metrics INFO Creating in-memory metrics store
+2020-01-24 11:12:25,874 ActorAddr-(T|:45103)/PID:12 esrally.metrics INFO Opening metrics store for race timestamp=[20200124T111223Z], track=[percolator], challenge=[append-no-conflicts], car=[['external']]
+2020-01-24 11:12:25,874 ActorAddr-(T|:45103)/PID:12 esrally.metrics INFO Creating file race store
+2020-01-24 11:12:25,874 ActorAddr-(T|:45103)/PID:12 esrally.actor INFO Asking mechanic to start the engine.
+2020-01-24 11:12:25,874 ActorAddr-(T|:45103)/PID:12 esrally.actor INFO Capabilities [{'coordinator': True, 'ip': '127.0.0.1', 'Convention Address.IPv4': '127.0.0.1:1900', 'Thespian ActorSystem Name': 'multiprocTCPBase', 'Thespian ActorSystem Version': 2, 'Thespian Watch Supported': True, 'Python Version': (3, 7, 3, 'final', 0), 'Thespian Generation': (3, 9), 'Thespian Version': '1579864343952'}] match requirements [{'coordinator': True}].
+2020-01-24 11:12:25,886 ActorAddr-(T|:45103)/PID:12 esrally.actor INFO Mechanic has started engine successfully.
+2020-01-24 11:12:25,887 ActorAddr-(T|:45103)/PID:12 esrally.actor INFO Capabilities [{'coordinator': True, 'ip': '127.0.0.1', 'Convention Address.IPv4': '127.0.0.1:1900', 'Thespian ActorSystem Name': 'multiprocTCPBase', 'Thespian ActorSystem Version': 2, 'Thespian Watch Supported': True, 'Python Version': (3, 7, 3, 'final', 0), 'Thespian Generation': (3, 9), 'Thespian Version': '1579864343952'}] match requirements [{'coordinator': True}].
+2020-01-24 11:12:25,888 ActorAddr-(T|:45103)/PID:12 esrally.actor INFO Telling driver to prepare for benchmarking.
+2020-01-24 11:12:25,895 ActorAddr-(T|:38849)/PID:77 esrally.metrics INFO Creating in-memory metrics store
+2020-01-24 11:12:25,896 ActorAddr-(T|:38849)/PID:77 esrally.metrics INFO Opening metrics store for race timestamp=[20200124T111223Z], track=[percolator], challenge=[append-no-conflicts], car=[['external']]
+2020-01-24 11:12:25,897 ActorAddr-(T|:38849)/PID:77 esrally.client INFO Creating ES client connected to [{'host': 'esmaster', 'port': 9200}, {'host': 'esslave1', 'port': 9200}, {'host': 'esslave2', 'port': 9200}] with options [{'timeout': 60, 'retry-on-timeout': True}]
+2020-01-24 11:12:25,897 ActorAddr-(T|:38849)/PID:77 esrally.client INFO SSL support: off
+2020-01-24 11:12:25,897 ActorAddr-(T|:38849)/PID:77 esrally.client INFO HTTP basic authentication: off
+2020-01-24 11:12:25,897 ActorAddr-(T|:38849)/PID:77 esrally.client INFO HTTP compression: off
+2020-01-24 11:12:25,898 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Checking if REST API is available.
+2020-01-24 11:12:25,902 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO REST API is available.
+2020-01-24 11:12:25,945 ActorAddr-(T|:38849)/PID:77 esrally.actor INFO Capabilities [{'coordinator': True, 'ip': '127.0.0.1', 'Convention Address.IPv4': '127.0.0.1:1900', 'Thespian ActorSystem Name': 'multiprocTCPBase', 'Thespian ActorSystem Version': 2, 'Thespian Watch Supported': True, 'Python Version': (3, 7, 3, 'final', 0), 'Thespian Generation': (3, 9), 'Thespian Version': '1579864343952'}] match requirements [{'coordinator': True}].
+2020-01-24 11:12:25,954 ActorAddr-(T|:45955)/PID:78 esrally.actor INFO Preparing track [percolator]
+2020-01-24 11:12:25,955 ActorAddr-(T|:45955)/PID:78 esrally.track.loader INFO Resolved data root directory for document corpus [percolator] in track [percolator] to ['/rally/.rally/benchmarks/data/percolator'].
+2020-01-24 11:12:25,955 ActorAddr-(T|:45955)/PID:78 esrally.track.loader INFO Downloading data from [http://benchmarks.elasticsearch.org.s3.amazonaws.com/corpora/percolator/queries-2.json.bz2] (0 MB) to [/rally/.rally/benchmarks/data/percolator/queries-2.json.bz2].
+2020-01-24 11:12:29,281 ActorAddr-(T|:45103)/PID:12 esrally.actor INFO Telling driver to start benchmark.
+2020-01-24 11:12:26,572 ActorAddr-(T|:45955)/PID:78 esrally.track.loader INFO Downloaded data from [http://benchmarks.elasticsearch.org.s3.amazonaws.com/corpora/percolator/queries-2.json.bz2] to [/rally/.rally/benchmarks/data/percolator/queries-2.json.bz2].
+2020-01-24 11:12:29,281 ActorAddr-(T|:38849)/PID:77 esrally.actor INFO A track preparator has exited.
+2020-01-24 11:12:26,573 ActorAddr-(T|:45955)/PID:78 esrally.track.loader INFO Decompressing track data from [/rally/.rally/benchmarks/data/percolator/queries-2.json.bz2] to [/rally/.rally/benchmarks/data/percolator/queries-2.json] (resulting size: 0.10 GB) ... 
+2020-01-24 11:12:29,283 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Benchmark is about to start.
+2020-01-24 11:12:29,283 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Attaching cluster-level telemetry devices.
+2020-01-24 11:12:29,417 ActorAddr-(T|:38849)/PID:77 esrally.telemetry INFO JvmStatsSummary on benchmark start
+2020-01-24 11:12:29,452 ActorAddr-(T|:38849)/PID:77 esrally.telemetry WARNING Could not determine value at path [merges,total_time_in_millis]. Returning default value [None]
+2020-01-24 11:12:29,452 ActorAddr-(T|:38849)/PID:77 esrally.telemetry WARNING Could not determine value at path [merges,total_throttled_time_in_millis]. Returning default value [None]
+2020-01-24 11:12:29,452 ActorAddr-(T|:38849)/PID:77 esrally.telemetry WARNING Could not determine value at path [indexing,index_time_in_millis]. Returning default value [None]
+2020-01-24 11:12:29,452 ActorAddr-(T|:38849)/PID:77 esrally.telemetry WARNING Could not determine value at path [indexing,throttle_time_in_millis]. Returning default value [None]
+2020-01-24 11:12:29,453 ActorAddr-(T|:38849)/PID:77 esrally.telemetry WARNING Could not determine value at path [refresh,total_time_in_millis]. Returning default value [None]
+2020-01-24 11:12:29,453 ActorAddr-(T|:38849)/PID:77 esrally.telemetry WARNING Could not determine value at path [flush,total_time_in_millis]. Returning default value [None]
+2020-01-24 11:12:29,453 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Cluster-level telemetry devices are now attached.
+2020-01-24 11:12:29,454 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Benchmark consists of [15] steps executed by (at most) [8] clients as specified by the allocation matrix:
+[[JoinPoint(0), TaskAllocation [0/1] for delete-index, JoinPoint(1), TaskAllocation [0/1] for create-index, JoinPoint(2), TaskAllocation [0/1] for check-cluster-health, JoinPoint(3), TaskAllocation [0/8] for index, JoinPoint(4), TaskAllocation [0/1] for refresh-after-index, JoinPoint(5), TaskAllocation [0/1] for force-merge, JoinPoint(6), TaskAllocation [0/1] for refresh-after-force-merge, JoinPoint(7), TaskAllocation [0/1] for percolator_with_content_president_bush, JoinPoint(8), TaskAllocation [0/1] for percolator_with_content_saddam_hussein, JoinPoint(9), TaskAllocation [0/1] for percolator_with_content_hurricane_katrina, JoinPoint(10), TaskAllocation [0/1] for percolator_with_content_google, JoinPoint(11), TaskAllocation [0/1] for percolator_no_score_with_content_google, JoinPoint(12), TaskAllocation [0/1] for percolator_with_highlighting, JoinPoint(13), TaskAllocation [0/1] for percolator_with_content_ignore_me, JoinPoint(14), TaskAllocation [0/1] for percolator_no_score_with_content_ignore_me, JoinPoint(15)], [JoinPoint(0), None, JoinPoint(1), None, JoinPoint(2), None, JoinPoint(3), TaskAllocation [1/8] for index, JoinPoint(4), None, JoinPoint(5), None, JoinPoint(6), None, JoinPoint(7), None, JoinPoint(8), None, JoinPoint(9), None, JoinPoint(10), None, JoinPoint(11), None, JoinPoint(12), None, JoinPoint(13), None, JoinPoint(14), None, JoinPoint(15)], [JoinPoint(0), None, JoinPoint(1), None, JoinPoint(2), None, JoinPoint(3), TaskAllocation [2/8] for index, JoinPoint(4), None, JoinPoint(5), None, JoinPoint(6), None, JoinPoint(7), None, JoinPoint(8), None, JoinPoint(9), None, JoinPoint(10), None, JoinPoint(11), None, JoinPoint(12), None, JoinPoint(13), None, JoinPoint(14), None, JoinPoint(15)], [JoinPoint(0), None, JoinPoint(1), None, JoinPoint(2), None, JoinPoint(3), TaskAllocation [3/8] for index, JoinPoint(4), None, JoinPoint(5), None, JoinPoint(6), None, JoinPoint(7), None, JoinPoint(8), None, JoinPoint(9), None, JoinPoint(10), None, JoinPoint(11), None, JoinPoint(12), None, JoinPoint(13), None, JoinPoint(14), None, JoinPoint(15)], [JoinPoint(0), None, JoinPoint(1), None, JoinPoint(2), None, JoinPoint(3), TaskAllocation [4/8] for index, JoinPoint(4), None, JoinPoint(5), None, JoinPoint(6), None, JoinPoint(7), None, JoinPoint(8), None, JoinPoint(9), None, JoinPoint(10), None, JoinPoint(11), None, JoinPoint(12), None, JoinPoint(13), None, JoinPoint(14), None, JoinPoint(15)], [JoinPoint(0), None, JoinPoint(1), None, JoinPoint(2), None, JoinPoint(3), TaskAllocation [5/8] for index, JoinPoint(4), None, JoinPoint(5), None, JoinPoint(6), None, JoinPoint(7), None, JoinPoint(8), None, JoinPoint(9), None, JoinPoint(10), None, JoinPoint(11), None, JoinPoint(12), None, JoinPoint(13), None, JoinPoint(14), None, JoinPoint(15)], [JoinPoint(0), None, JoinPoint(1), None, JoinPoint(2), None, JoinPoint(3), TaskAllocation [6/8] for index, JoinPoint(4), None, JoinPoint(5), None, JoinPoint(6), None, JoinPoint(7), None, JoinPoint(8), None, JoinPoint(9), None, JoinPoint(10), None, JoinPoint(11), None, JoinPoint(12), None, JoinPoint(13), None, JoinPoint(14), None, JoinPoint(15)], [JoinPoint(0), None, JoinPoint(1), None, JoinPoint(2), None, JoinPoint(3), TaskAllocation [7/8] for index, JoinPoint(4), None, JoinPoint(5), None, JoinPoint(6), None, JoinPoint(7), None, JoinPoint(8), None, JoinPoint(9), None, JoinPoint(10), None, JoinPoint(11), None, JoinPoint(12), None, JoinPoint(13), None, JoinPoint(14), None, JoinPoint(15)]]
+2020-01-24 11:12:29,454 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Allocating load generator [0] on [localhost]
+2020-01-24 11:12:29,454 ActorAddr-(T|:38849)/PID:77 esrally.actor INFO Capabilities [{'coordinator': True, 'ip': '127.0.0.1', 'Convention Address.IPv4': '127.0.0.1:1900', 'Thespian ActorSystem Name': 'multiprocTCPBase', 'Thespian ActorSystem Version': 2, 'Thespian Watch Supported': True, 'Python Version': (3, 7, 3, 'final', 0), 'Thespian Generation': (3, 9), 'Thespian Version': '1579864343952'}] match requirements [{'coordinator': True}].
+2020-01-24 11:12:29,456 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Allocating load generator [1] on [localhost]
+2020-01-24 11:12:29,457 ActorAddr-(T|:38849)/PID:77 esrally.actor INFO Capabilities [{'coordinator': True, 'ip': '127.0.0.1', 'Convention Address.IPv4': '127.0.0.1:1900', 'Thespian ActorSystem Name': 'multiprocTCPBase', 'Thespian ActorSystem Version': 2, 'Thespian Watch Supported': True, 'Python Version': (3, 7, 3, 'final', 0), 'Thespian Generation': (3, 9), 'Thespian Version': '1579864343952'}] match requirements [{'coordinator': True}].
+2020-01-24 11:12:29,459 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Allocating load generator [2] on [localhost]
+2020-01-24 11:12:29,460 ActorAddr-(T|:38849)/PID:77 esrally.actor INFO Capabilities [{'coordinator': True, 'ip': '127.0.0.1', 'Convention Address.IPv4': '127.0.0.1:1900', 'Thespian ActorSystem Name': 'multiprocTCPBase', 'Thespian ActorSystem Version': 2, 'Thespian Watch Supported': True, 'Python Version': (3, 7, 3, 'final', 0), 'Thespian Generation': (3, 9), 'Thespian Version': '1579864343952'}] match requirements [{'coordinator': True}].
+2020-01-24 11:12:29,462 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Allocating load generator [3] on [localhost]
+2020-01-24 11:12:29,533 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is about to start.
+2020-01-24 11:12:29,535 ActorAddr-(T|:37979)/PID:79 esrally.client INFO Creating ES client connected to [{'host': 'esmaster', 'port': 9200}, {'host': 'esslave1', 'port': 9200}, {'host': 'esslave2', 'port': 9200}] with options [{'timeout': 60}]
+2020-01-24 11:12:29,535 ActorAddr-(T|:37979)/PID:79 esrally.client INFO SSL support: off
+2020-01-24 11:12:29,535 ActorAddr-(T|:37979)/PID:79 esrally.client INFO HTTP basic authentication: off
+2020-01-24 11:12:29,536 ActorAddr-(T|:37979)/PID:79 esrally.client INFO HTTP compression: off
+2020-01-24 11:12:29,538 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] reached join point [JoinPoint(0)].
+2020-01-24 11:12:29,539 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] is about to start.
+2020-01-24 11:12:29,542 ActorAddr-(T|:44693)/PID:81 esrally.client INFO Creating ES client connected to [{'host': 'esmaster', 'port': 9200}, {'host': 'esslave1', 'port': 9200}, {'host': 'esslave2', 'port': 9200}] with options [{'timeout': 60}]
+2020-01-24 11:12:29,542 ActorAddr-(T|:44693)/PID:81 esrally.client INFO SSL support: off
+2020-01-24 11:12:29,542 ActorAddr-(T|:44693)/PID:81 esrally.client INFO HTTP basic authentication: off
+2020-01-24 11:12:29,542 ActorAddr-(T|:44693)/PID:81 esrally.client INFO HTTP compression: off
+2020-01-24 11:12:29,545 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] reached join point [JoinPoint(0)].
+2020-01-24 11:12:29,547 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] is about to start.
+2020-01-24 11:12:29,463 ActorAddr-(T|:38849)/PID:77 esrally.actor INFO Capabilities [{'coordinator': True, 'ip': '127.0.0.1', 'Convention Address.IPv4': '127.0.0.1:1900', 'Thespian ActorSystem Name': 'multiprocTCPBase', 'Thespian ActorSystem Version': 2, 'Thespian Watch Supported': True, 'Python Version': (3, 7, 3, 'final', 0), 'Thespian Generation': (3, 9), 'Thespian Version': '1579864343952'}] match requirements [{'coordinator': True}].
+2020-01-24 11:12:29,549 ActorAddr-(T|:41267)/PID:80 esrally.client INFO Creating ES client connected to [{'host': 'esmaster', 'port': 9200}, {'host': 'esslave1', 'port': 9200}, {'host': 'esslave2', 'port': 9200}] with options [{'timeout': 60}]
+2020-01-24 11:12:29,549 ActorAddr-(T|:41267)/PID:80 esrally.client INFO SSL support: off
+2020-01-24 11:12:29,549 ActorAddr-(T|:41267)/PID:80 esrally.client INFO HTTP basic authentication: off
+2020-01-24 11:12:29,549 ActorAddr-(T|:41267)/PID:80 esrally.client INFO HTTP compression: off
+2020-01-24 11:12:29,552 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] reached join point [JoinPoint(0)].
+2020-01-24 11:12:29,555 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] is about to start.
+2020-01-24 11:12:29,560 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] is about to start.
+2020-01-24 11:12:29,557 ActorAddr-(T|:33293)/PID:83 esrally.client INFO Creating ES client connected to [{'host': 'esmaster', 'port': 9200}, {'host': 'esslave1', 'port': 9200}, {'host': 'esslave2', 'port': 9200}] with options [{'timeout': 60}]
+2020-01-24 11:12:29,562 ActorAddr-(T|:33753)/PID:85 esrally.client INFO Creating ES client connected to [{'host': 'esmaster', 'port': 9200}, {'host': 'esslave1', 'port': 9200}, {'host': 'esslave2', 'port': 9200}] with options [{'timeout': 60}]
+2020-01-24 11:12:29,563 ActorAddr-(T|:33753)/PID:85 esrally.client INFO SSL support: off
+2020-01-24 11:12:29,566 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] is about to start.
+2020-01-24 11:12:29,465 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Allocating load generator [4] on [localhost]
+2020-01-24 11:12:29,558 ActorAddr-(T|:33293)/PID:83 esrally.client INFO SSL support: off
+2020-01-24 11:12:29,563 ActorAddr-(T|:33753)/PID:85 esrally.client INFO HTTP basic authentication: off
+2020-01-24 11:12:29,572 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] is about to start.
+2020-01-24 11:12:29,569 ActorAddr-(T|:43351)/PID:84 esrally.client INFO Creating ES client connected to [{'host': 'esmaster', 'port': 9200}, {'host': 'esslave1', 'port': 9200}, {'host': 'esslave2', 'port': 9200}] with options [{'timeout': 60}]
+2020-01-24 11:12:29,558 ActorAddr-(T|:33293)/PID:83 esrally.client INFO HTTP basic authentication: off
+2020-01-24 11:12:29,563 ActorAddr-(T|:33753)/PID:85 esrally.client INFO HTTP compression: off
+2020-01-24 11:12:29,575 ActorAddr-(T|:44609)/PID:82 esrally.client INFO Creating ES client connected to [{'host': 'esmaster', 'port': 9200}, {'host': 'esslave1', 'port': 9200}, {'host': 'esslave2', 'port': 9200}] with options [{'timeout': 60}]
+2020-01-24 11:12:29,569 ActorAddr-(T|:43351)/PID:84 esrally.client INFO SSL support: off
+2020-01-24 11:12:29,558 ActorAddr-(T|:33293)/PID:83 esrally.client INFO HTTP compression: off
+2020-01-24 11:12:29,566 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] reached join point [JoinPoint(0)].
+2020-01-24 11:12:29,575 ActorAddr-(T|:44609)/PID:82 esrally.client INFO SSL support: off
+2020-01-24 11:12:29,569 ActorAddr-(T|:43351)/PID:84 esrally.client INFO HTTP basic authentication: off
+2020-01-24 11:12:29,561 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] reached join point [JoinPoint(0)].
+2020-01-24 11:12:29,466 ActorAddr-(T|:38849)/PID:77 esrally.actor INFO Capabilities [{'coordinator': True, 'ip': '127.0.0.1', 'Convention Address.IPv4': '127.0.0.1:1900', 'Thespian ActorSystem Name': 'multiprocTCPBase', 'Thespian ActorSystem Version': 2, 'Thespian Watch Supported': True, 'Python Version': (3, 7, 3, 'final', 0), 'Thespian Generation': (3, 9), 'Thespian Version': '1579864343952'}] match requirements [{'coordinator': True}].
+2020-01-24 11:12:29,575 ActorAddr-(T|:44609)/PID:82 esrally.client INFO HTTP basic authentication: off
+2020-01-24 11:12:29,569 ActorAddr-(T|:43351)/PID:84 esrally.client INFO HTTP compression: off
+2020-01-24 11:12:29,575 ActorAddr-(T|:44609)/PID:82 esrally.client INFO HTTP compression: off
+2020-01-24 11:12:29,572 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] reached join point [JoinPoint(0)].
+2020-01-24 11:12:29,578 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] reached join point [JoinPoint(0)].
+2020-01-24 11:12:29,578 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] is about to start.
+2020-01-24 11:12:29,468 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Allocating load generator [5] on [localhost]
+2020-01-24 11:12:29,580 ActorAddr-(T|:46087)/PID:86 esrally.client INFO Creating ES client connected to [{'host': 'esmaster', 'port': 9200}, {'host': 'esslave1', 'port': 9200}, {'host': 'esslave2', 'port': 9200}] with options [{'timeout': 60}]
+2020-01-24 11:12:29,581 ActorAddr-(T|:46087)/PID:86 esrally.client INFO SSL support: off
+2020-01-24 11:12:29,581 ActorAddr-(T|:46087)/PID:86 esrally.client INFO HTTP basic authentication: off
+2020-01-24 11:12:29,581 ActorAddr-(T|:46087)/PID:86 esrally.client INFO HTTP compression: off
+2020-01-24 11:12:29,469 ActorAddr-(T|:38849)/PID:77 esrally.actor INFO Capabilities [{'coordinator': True, 'ip': '127.0.0.1', 'Convention Address.IPv4': '127.0.0.1:1900', 'Thespian ActorSystem Name': 'multiprocTCPBase', 'Thespian ActorSystem Version': 2, 'Thespian Watch Supported': True, 'Python Version': (3, 7, 3, 'final', 0), 'Thespian Generation': (3, 9), 'Thespian Version': '1579864343952'}] match requirements [{'coordinator': True}].
+2020-01-24 11:12:29,590 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] reached join point [JoinPoint(0)].
+2020-01-24 11:12:29,471 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Allocating load generator [6] on [localhost]
+2020-01-24 11:12:29,479 ActorAddr-(T|:38849)/PID:77 esrally.actor INFO Capabilities [{'coordinator': True, 'ip': '127.0.0.1', 'Convention Address.IPv4': '127.0.0.1:1900', 'Thespian ActorSystem Name': 'multiprocTCPBase', 'Thespian ActorSystem Version': 2, 'Thespian Watch Supported': True, 'Python Version': (3, 7, 3, 'final', 0), 'Thespian Generation': (3, 9), 'Thespian Version': '1579864343952'}] match requirements [{'coordinator': True}].
+2020-01-24 11:12:29,481 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Allocating load generator [7] on [localhost]
+2020-01-24 11:12:29,482 ActorAddr-(T|:38849)/PID:77 esrally.actor INFO Capabilities [{'coordinator': True, 'ip': '127.0.0.1', 'Convention Address.IPv4': '127.0.0.1:1900', 'Thespian ActorSystem Name': 'multiprocTCPBase', 'Thespian ActorSystem Version': 2, 'Thespian Watch Supported': True, 'Python Version': (3, 7, 3, 'final', 0), 'Thespian Generation': (3, 9), 'Thespian Version': '1579864343952'}] match requirements [{'coordinator': True}].
+2020-01-24 11:12:29,602 ActorAddr-(T|:45103)/PID:12 esrally.actor INFO Task has finished.
+2020-01-24 11:12:29,496 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Starting load generator [0].
+2020-01-24 11:12:29,603 ActorAddr-(T|:45103)/PID:12 esrally.actor INFO Bulk adding request metrics to metrics store.
+2020-01-24 11:12:29,605 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is continuing its work at task index [1] on [99181.169974], that is in [0:00:00.962063].
+2020-01-24 11:12:29,498 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Starting load generator [1].
+2020-01-24 11:12:29,607 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] is continuing its work at task index [1] on [99181.165245], that is in [0:00:00.955192].
+2020-01-24 11:12:29,498 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Starting load generator [2].
+2020-01-24 11:12:29,609 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] is continuing its work at task index [1] on [99181.171745], that is in [0:00:00.959521].
+2020-01-24 11:12:29,498 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Starting load generator [3].
+2020-01-24 11:12:29,614 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] is continuing its work at task index [1] on [99181.171501], that is in [0:00:00.954421].
+2020-01-24 11:12:29,611 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] is continuing its work at task index [1] on [99181.183423], that is in [0:00:00.969034].
+2020-01-24 11:12:29,499 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Starting load generator [4].
+2020-01-24 11:12:29,499 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Starting load generator [5].
+2020-01-24 11:12:29,617 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] is continuing its work at task index [1] on [99181.181815], that is in [0:00:00.962109].
+2020-01-24 11:12:29,500 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Starting load generator [6].
+2020-01-24 11:12:29,619 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] is continuing its work at task index [1] on [99181.176301], that is in [0:00:00.954533].
+2020-01-24 11:12:29,500 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Starting load generator [7].
+2020-01-24 11:12:29,621 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] is continuing its work at task index [1] on [99181.193854], that is in [0:00:00.970153].
+2020-01-24 11:12:29,531 ActorAddr-(T|:38849)/PID:77 esrally.actor INFO A track preparator has exited.
+2020-01-24 11:12:29,564 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [1/8] drivers reached join point [0/15].
+2020-01-24 11:12:29,569 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [2/8] drivers reached join point [0/15].
+2020-01-24 11:12:29,583 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [3/8] drivers reached join point [0/15].
+2020-01-24 11:12:29,585 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [4/8] drivers reached join point [0/15].
+2020-01-24 11:12:29,585 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [5/8] drivers reached join point [0/15].
+2020-01-24 11:12:29,586 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [6/8] drivers reached join point [0/15].
+2020-01-24 11:12:29,590 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [7/8] drivers reached join point [0/15].
+2020-01-24 11:12:29,592 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [8/8] drivers reached join point [0/15].
+2020-01-24 11:12:29,592 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO All drivers completed their tasks until join point [0/15].
+2020-01-24 11:12:29,592 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [0] at their timestamp [99181.169974] (master timestamp [99181.195493])
+2020-01-24 11:12:29,593 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [1] at their timestamp [99181.165245] (master timestamp [99181.195493])
+2020-01-24 11:12:29,593 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [2] at their timestamp [99181.171745] (master timestamp [99181.195493])
+2020-01-24 11:12:29,593 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [3] at their timestamp [99181.183423] (master timestamp [99181.195493])
+2020-01-24 11:12:29,594 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [4] at their timestamp [99181.171501] (master timestamp [99181.195493])
+2020-01-24 11:12:29,594 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [5] at their timestamp [99181.181815] (master timestamp [99181.195493])
+2020-01-24 11:12:29,594 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [6] at their timestamp [99181.176301] (master timestamp [99181.195493])
+2020-01-24 11:12:29,595 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [7] at their timestamp [99181.193854] (master timestamp [99181.195493])
+2020-01-24 11:12:30,563 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] starts driving now.
+2020-01-24 11:12:30,564 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] reached join point [JoinPoint(1)].
+2020-01-24 11:12:30,567 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [1/8] drivers reached join point [1/15].
+2020-01-24 11:12:30,568 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] starts driving now.
+2020-01-24 11:12:30,570 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] starts driving now.
+2020-01-24 11:12:30,570 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] starts driving now.
+2020-01-24 11:12:30,569 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is executing [delete-index].
+2020-01-24 11:12:30,570 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] reached join point [JoinPoint(1)].
+2020-01-24 11:12:30,570 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] reached join point [JoinPoint(1)].
+2020-01-24 11:12:30,569 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO Choosing [deterministic scheduler] for [delete-index].
+2020-01-24 11:12:30,572 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [2/8] drivers reached join point [1/15].
+2020-01-24 11:12:30,569 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO Creating iteration-count based schedule with [deterministic] distribution for [delete-index] with [0] warmup iterations and [1] iterations.
+2020-01-24 11:12:30,572 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [3/8] drivers reached join point [1/15].
+2020-01-24 11:12:30,570 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO iteration-count-based schedule will determine when the schedule for [delete-index] terminates.
+2020-01-24 11:12:30,575 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] starts driving now.
+2020-01-24 11:12:30,575 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] reached join point [JoinPoint(1)].
+2020-01-24 11:12:30,577 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [4/8] drivers reached join point [1/15].
+2020-01-24 11:12:30,582 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] starts driving now.
+2020-01-24 11:12:30,582 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO iteration-count-based schedule for [delete-index] stopped regularly.
+2020-01-24 11:12:30,584 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] starts driving now.
+2020-01-24 11:12:30,584 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [5/8] drivers reached join point [1/15].
+2020-01-24 11:12:30,583 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] reached join point [JoinPoint(1)].
+2020-01-24 11:12:30,584 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] reached join point [JoinPoint(1)].
+2020-01-24 11:12:30,586 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [6/8] drivers reached join point [1/15].
+2020-01-24 11:12:30,592 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] starts driving now.
+2020-01-24 11:12:30,593 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] reached join point [JoinPoint(1)].
+2020-01-24 11:12:30,594 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [7/8] drivers reached join point [1/15].
+2020-01-24 11:12:35,576 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is ready for the next task.
+2020-01-24 11:12:35,577 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] reached join point [JoinPoint(1)].
+2020-01-24 11:12:35,581 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [8/8] drivers reached join point [1/15].
+2020-01-24 11:12:35,585 ActorAddr-(T|:45103)/PID:12 esrally.actor INFO Task has finished.
+2020-01-24 11:12:35,586 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is continuing its work at task index [3] on [99187.184191], that is in [0:00:00.995471].
+2020-01-24 11:12:35,586 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] is continuing its work at task index [3] on [99187.185508], that is in [0:00:00.996407].
+2020-01-24 11:12:35,585 ActorAddr-(T|:45103)/PID:12 esrally.actor INFO Bulk adding request metrics to metrics store.
+2020-01-24 11:12:35,587 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] is continuing its work at task index [3] on [99187.186119], that is in [0:00:00.995720].
+2020-01-24 11:12:35,588 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] is continuing its work at task index [3] on [99187.186774], that is in [0:00:00.995931].
+2020-01-24 11:12:35,588 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] is continuing its work at task index [3] on [99187.185792], that is in [0:00:00.994505].
+2020-01-24 11:12:35,589 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] is continuing its work at task index [3] on [99187.186140], that is in [0:00:00.994411].
+2020-01-24 11:12:35,589 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] is continuing its work at task index [3] on [99187.186110], that is in [0:00:00.993932].
+2020-01-24 11:12:35,590 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] is continuing its work at task index [3] on [99187.186793], that is in [0:00:00.994144].
+2020-01-24 11:12:35,582 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO All drivers completed their tasks until join point [1/15].
+2020-01-24 11:12:35,584 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [0] at their timestamp [99187.184191] (master timestamp [99187.187566])
+2020-01-24 11:12:35,585 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [1] at their timestamp [99187.185508] (master timestamp [99187.187566])
+2020-01-24 11:12:35,586 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [2] at their timestamp [99187.186119] (master timestamp [99187.187566])
+2020-01-24 11:12:35,587 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [3] at their timestamp [99187.186774] (master timestamp [99187.187566])
+2020-01-24 11:12:35,587 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [4] at their timestamp [99187.185792] (master timestamp [99187.187566])
+2020-01-24 11:12:35,588 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [5] at their timestamp [99187.186140] (master timestamp [99187.187566])
+2020-01-24 11:12:35,588 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [6] at their timestamp [99187.186110] (master timestamp [99187.187566])
+2020-01-24 11:12:35,589 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [7] at their timestamp [99187.186793] (master timestamp [99187.187566])
+2020-01-24 11:12:36,583 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] starts driving now.
+2020-01-24 11:12:36,583 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] starts driving now.
+2020-01-24 11:12:36,587 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] starts driving now.
+2020-01-24 11:12:36,584 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] starts driving now.
+2020-01-24 11:12:36,585 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] starts driving now.
+2020-01-24 11:12:36,585 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] starts driving now.
+2020-01-24 11:12:36,584 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] reached join point [JoinPoint(2)].
+2020-01-24 11:12:36,589 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] starts driving now.
+2020-01-24 11:12:36,590 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] starts driving now.
+2020-01-24 11:12:36,591 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [1/8] drivers reached join point [2/15].
+2020-01-24 11:12:36,584 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is executing [create-index].
+2020-01-24 11:12:36,587 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] reached join point [JoinPoint(2)].
+2020-01-24 11:12:36,585 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] reached join point [JoinPoint(2)].
+2020-01-24 11:12:36,585 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] reached join point [JoinPoint(2)].
+2020-01-24 11:12:36,586 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] reached join point [JoinPoint(2)].
+2020-01-24 11:12:36,590 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] reached join point [JoinPoint(2)].
+2020-01-24 11:12:36,591 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] reached join point [JoinPoint(2)].
+2020-01-24 11:12:36,591 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [2/8] drivers reached join point [2/15].
+2020-01-24 11:12:36,588 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO Choosing [deterministic scheduler] for [create-index].
+2020-01-24 11:12:36,591 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [3/8] drivers reached join point [2/15].
+2020-01-24 11:12:36,589 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO Creating iteration-count based schedule with [deterministic] distribution for [create-index] with [0] warmup iterations and [1] iterations.
+2020-01-24 11:12:36,592 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [4/8] drivers reached join point [2/15].
+2020-01-24 11:12:36,589 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO iteration-count-based schedule will determine when the schedule for [create-index] terminates.
+2020-01-24 11:12:36,593 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [5/8] drivers reached join point [2/15].
+2020-01-24 11:12:36,594 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [6/8] drivers reached join point [2/15].
+2020-01-24 11:12:36,594 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [7/8] drivers reached join point [2/15].
+2020-01-24 11:12:38,943 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO iteration-count-based schedule for [create-index] stopped regularly.
+2020-01-24 11:12:41,591 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is ready for the next task.
+2020-01-24 11:12:41,592 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] reached join point [JoinPoint(2)].
+2020-01-24 11:12:41,593 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [8/8] drivers reached join point [2/15].
+2020-01-24 11:12:41,594 ActorAddr-(T|:45103)/PID:12 esrally.actor INFO Task has finished.
+2020-01-24 11:12:41,595 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] is continuing its work at task index [5] on [99193.191173], that is in [0:00:00.992968].
+2020-01-24 11:12:41,595 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is continuing its work at task index [5] on [99193.195974], that is in [0:00:00.998141].
+2020-01-24 11:12:41,596 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] is continuing its work at task index [5] on [99193.193480], that is in [0:00:00.994014].
+2020-01-24 11:12:41,595 ActorAddr-(T|:45103)/PID:12 esrally.actor INFO Bulk adding request metrics to metrics store.
+2020-01-24 11:12:41,598 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] is continuing its work at task index [5] on [99193.194292], that is in [0:00:00.993547].
+2020-01-24 11:12:41,598 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] is continuing its work at task index [5] on [99193.191226], that is in [0:00:00.990128].
+2020-01-24 11:12:41,599 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] is continuing its work at task index [5] on [99193.191532], that is in [0:00:00.989133].
+2020-01-24 11:12:41,600 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] is continuing its work at task index [5] on [99193.191834], that is in [0:00:00.989063].
+2020-01-24 11:12:41,601 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] is continuing its work at task index [5] on [99193.191518], that is in [0:00:00.987455].
+2020-01-24 11:12:41,593 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO All drivers completed their tasks until join point [2/15].
+2020-01-24 11:12:41,594 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [0] at their timestamp [99193.195974] (master timestamp [99193.197053])
+2020-01-24 11:12:41,594 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [1] at their timestamp [99193.191173] (master timestamp [99193.197053])
+2020-01-24 11:12:41,596 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [2] at their timestamp [99193.193480] (master timestamp [99193.197053])
+2020-01-24 11:12:41,597 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [3] at their timestamp [99193.194292] (master timestamp [99193.197053])
+2020-01-24 11:12:41,597 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [4] at their timestamp [99193.191226] (master timestamp [99193.197053])
+2020-01-24 11:12:41,598 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [5] at their timestamp [99193.191532] (master timestamp [99193.197053])
+2020-01-24 11:12:41,599 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [6] at their timestamp [99193.191834] (master timestamp [99193.197053])
+2020-01-24 11:12:41,600 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [7] at their timestamp [99193.191518] (master timestamp [99193.197053])
+2020-01-24 11:12:42,589 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] starts driving now.
+2020-01-24 11:12:42,590 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] starts driving now.
+2020-01-24 11:12:42,590 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] starts driving now.
+2020-01-24 11:12:42,589 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] starts driving now.
+2020-01-24 11:12:42,593 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] starts driving now.
+2020-01-24 11:12:42,596 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] starts driving now.
+2020-01-24 11:12:42,596 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] starts driving now.
+2020-01-24 11:12:42,593 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] starts driving now.
+2020-01-24 11:12:42,596 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [1/8] drivers reached join point [3/15].
+2020-01-24 11:12:42,590 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] reached join point [JoinPoint(3)].
+2020-01-24 11:12:42,591 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] reached join point [JoinPoint(3)].
+2020-01-24 11:12:42,590 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] reached join point [JoinPoint(3)].
+2020-01-24 11:12:42,591 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] reached join point [JoinPoint(3)].
+2020-01-24 11:12:42,593 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] reached join point [JoinPoint(3)].
+2020-01-24 11:12:42,597 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is executing [check-cluster-health].
+2020-01-24 11:12:42,597 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] reached join point [JoinPoint(3)].
+2020-01-24 11:12:42,594 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] reached join point [JoinPoint(3)].
+2020-01-24 11:12:42,596 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [2/8] drivers reached join point [3/15].
+2020-01-24 11:12:42,597 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO Choosing [deterministic scheduler] for [check-cluster-health].
+2020-01-24 11:12:42,597 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [3/8] drivers reached join point [3/15].
+2020-01-24 11:12:42,598 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO Creating iteration-count based schedule with [deterministic] distribution for [check-cluster-health] with [0] warmup iterations and [1] iterations.
+2020-01-24 11:12:42,600 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO iteration-count-based schedule will determine when the schedule for [check-cluster-health] terminates.
+2020-01-24 11:12:42,598 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [4/8] drivers reached join point [3/15].
+2020-01-24 11:12:42,602 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [5/8] drivers reached join point [3/15].
+2020-01-24 11:12:42,603 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [6/8] drivers reached join point [3/15].
+2020-01-24 11:12:42,607 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [7/8] drivers reached join point [3/15].
+2020-01-24 11:12:42,621 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO iteration-count-based schedule for [check-cluster-health] stopped regularly.
+2020-01-24 11:12:47,604 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is ready for the next task.
+2020-01-24 11:12:47,605 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] reached join point [JoinPoint(3)].
+2020-01-24 11:12:47,609 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [8/8] drivers reached join point [3/15].
+2020-01-24 11:12:47,613 ActorAddr-(T|:45103)/PID:12 esrally.actor INFO Task has finished.
+2020-01-24 11:12:47,614 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is continuing its work at task index [7] on [99199.211798], that is in [0:00:00.994322].
+2020-01-24 11:12:47,616 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] is continuing its work at task index [7] on [99199.210180], that is in [0:00:00.991514].
+2020-01-24 11:12:47,614 ActorAddr-(T|:45103)/PID:12 esrally.actor INFO Bulk adding request metrics to metrics store.
+2020-01-24 11:12:47,619 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] is continuing its work at task index [7] on [99199.209708], that is in [0:00:00.988050].
+2020-01-24 11:12:47,620 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] is continuing its work at task index [7] on [99199.205882], that is in [0:00:00.982934].
+2020-01-24 11:12:47,624 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] is continuing its work at task index [7] on [99199.209832], that is in [0:00:00.982894].
+2020-01-24 11:12:47,625 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] is continuing its work at task index [7] on [99199.209182], that is in [0:00:00.980757].
+2020-01-24 11:12:47,627 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] is continuing its work at task index [7] on [99199.202116], that is in [0:00:00.972507].
+2020-01-24 11:12:47,631 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] is continuing its work at task index [7] on [99199.208176], that is in [0:00:00.974544].
+2020-01-24 11:12:47,610 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO All drivers completed their tasks until join point [3/15].
+2020-01-24 11:12:47,612 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [0] at their timestamp [99199.211798] (master timestamp [99199.215084])
+2020-01-24 11:12:47,613 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [1] at their timestamp [99199.210180] (master timestamp [99199.215084])
+2020-01-24 11:12:47,616 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [2] at their timestamp [99199.209708] (master timestamp [99199.215084])
+2020-01-24 11:12:47,618 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [3] at their timestamp [99199.205882] (master timestamp [99199.215084])
+2020-01-24 11:12:47,621 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [4] at their timestamp [99199.209832] (master timestamp [99199.215084])
+2020-01-24 11:12:47,623 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [5] at their timestamp [99199.209182] (master timestamp [99199.215084])
+2020-01-24 11:12:47,624 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [6] at their timestamp [99199.202116] (master timestamp [99199.215084])
+2020-01-24 11:12:47,628 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [7] at their timestamp [99199.208176] (master timestamp [99199.215084])
+2020-01-24 11:12:48,601 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] starts driving now.
+2020-01-24 11:12:48,604 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] starts driving now.
+2020-01-24 11:12:48,607 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] starts driving now.
+2020-01-24 11:12:48,602 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] is executing [index].
+2020-01-24 11:12:48,608 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] starts driving now.
+2020-01-24 11:12:48,609 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] starts driving now.
+2020-01-24 11:12:48,610 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] starts driving now.
+2020-01-24 11:12:48,610 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] starts driving now.
+2020-01-24 11:12:48,612 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] starts driving now.
+2020-01-24 11:12:48,605 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] is executing [index].
+2020-01-24 11:12:48,613 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] is executing [index].
+2020-01-24 11:12:48,603 ActorAddr-(T|:33753)/PID:85 esrally.driver.driver INFO Choosing [deterministic scheduler] for [index].
+2020-01-24 11:12:48,609 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] is executing [index].
+2020-01-24 11:12:48,609 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] is executing [index].
+2020-01-24 11:12:48,611 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] is executing [index].
+2020-01-24 11:12:48,612 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is executing [index].
+2020-01-24 11:12:48,606 ActorAddr-(T|:44609)/PID:82 esrally.driver.driver INFO Choosing [deterministic scheduler] for [index].
+2020-01-24 11:12:48,614 ActorAddr-(T|:46087)/PID:86 esrally.driver.driver INFO Choosing [deterministic scheduler] for [index].
+2020-01-24 11:12:48,604 ActorAddr-(T|:33753)/PID:85 esrally.track.params INFO Task-relative client at index [6] will bulk index [250000] docs starting from line offset [1500000] for [queries/None] from corpus [percolator].
+2020-01-24 11:12:48,609 ActorAddr-(T|:44693)/PID:81 esrally.driver.driver INFO Choosing [deterministic scheduler] for [index].
+2020-01-24 11:12:48,609 ActorAddr-(T|:41267)/PID:80 esrally.driver.driver INFO Choosing [deterministic scheduler] for [index].
+2020-01-24 11:12:48,613 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO Choosing [deterministic scheduler] for [index].
+2020-01-24 11:12:48,605 ActorAddr-(T|:33753)/PID:85 esrally.driver.driver INFO Creating time-period based schedule with [deterministic] distribution for [index] with a warmup period of [10] seconds and a time period of [None] seconds.
+2020-01-24 11:12:48,611 ActorAddr-(T|:43351)/PID:84 esrally.driver.driver INFO Choosing [deterministic scheduler] for [index].
+2020-01-24 11:12:48,613 ActorAddr-(T|:37979)/PID:79 esrally.track.params INFO Task-relative client at index [0] will bulk index [250000] docs starting from line offset [0] for [queries/None] from corpus [percolator].
+2020-01-24 11:12:48,606 ActorAddr-(T|:33753)/PID:85 esrally.driver.driver INFO Parameter source will determine when the schedule for [index] terminates.
+2020-01-24 11:12:48,611 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] is executing [index].
+2020-01-24 11:12:48,607 ActorAddr-(T|:44609)/PID:82 esrally.track.params INFO Task-relative client at index [3] will bulk index [250000] docs starting from line offset [750000] for [queries/None] from corpus [percolator].
+2020-01-24 11:12:48,610 ActorAddr-(T|:41267)/PID:80 esrally.track.params INFO Task-relative client at index [1] will bulk index [250000] docs starting from line offset [250000] for [queries/None] from corpus [percolator].
+2020-01-24 11:12:48,611 ActorAddr-(T|:43351)/PID:84 esrally.track.params INFO Task-relative client at index [5] will bulk index [250000] docs starting from line offset [1250000] for [queries/None] from corpus [percolator].
+2020-01-24 11:12:48,613 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO Creating time-period based schedule with [deterministic] distribution for [index] with a warmup period of [10] seconds and a time period of [None] seconds.
+2020-01-24 11:12:48,609 ActorAddr-(T|:33753)/PID:85 esrally.track.params INFO Skipping 1500000 lines in [/rally/.rally/benchmarks/data/percolator/queries-2.json].
+2020-01-24 11:12:48,614 ActorAddr-(T|:46087)/PID:86 esrally.track.params INFO Task-relative client at index [7] will bulk index [250000] docs starting from line offset [1750000] for [queries/None] from corpus [percolator].
+2020-01-24 11:12:48,608 ActorAddr-(T|:44609)/PID:82 esrally.driver.driver INFO Creating time-period based schedule with [deterministic] distribution for [index] with a warmup period of [10] seconds and a time period of [None] seconds.
+2020-01-24 11:12:48,610 ActorAddr-(T|:41267)/PID:80 esrally.driver.driver INFO Creating time-period based schedule with [deterministic] distribution for [index] with a warmup period of [10] seconds and a time period of [None] seconds.
+2020-01-24 11:12:48,615 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO Parameter source will determine when the schedule for [index] terminates.
+2020-01-24 11:12:48,610 ActorAddr-(T|:33753)/PID:85 esrally.track.params INFO Skipping 1500000 lines took 0.000151 s.
+2020-01-24 11:12:48,610 ActorAddr-(T|:44693)/PID:81 esrally.track.params INFO Task-relative client at index [2] will bulk index [250000] docs starting from line offset [500000] for [queries/None] from corpus [percolator].
+2020-01-24 11:12:48,611 ActorAddr-(T|:33293)/PID:83 esrally.driver.driver INFO Choosing [deterministic scheduler] for [index].
+2020-01-24 11:12:48,614 ActorAddr-(T|:46087)/PID:86 esrally.driver.driver INFO Creating time-period based schedule with [deterministic] distribution for [index] with a warmup period of [10] seconds and a time period of [None] seconds.
+2020-01-24 11:12:48,617 ActorAddr-(T|:44609)/PID:82 esrally.driver.driver INFO Parameter source will determine when the schedule for [index] terminates.
+2020-01-24 11:12:48,612 ActorAddr-(T|:41267)/PID:80 esrally.driver.driver INFO Parameter source will determine when the schedule for [index] terminates.
+2020-01-24 11:12:48,615 ActorAddr-(T|:37979)/PID:79 esrally.track.params INFO Skipping 0 lines in [/rally/.rally/benchmarks/data/percolator/queries-2.json].
+2020-01-24 11:12:48,612 ActorAddr-(T|:43351)/PID:84 esrally.driver.driver INFO Creating time-period based schedule with [deterministic] distribution for [index] with a warmup period of [10] seconds and a time period of [None] seconds.
+2020-01-24 11:12:48,610 ActorAddr-(T|:44693)/PID:81 esrally.driver.driver INFO Creating time-period based schedule with [deterministic] distribution for [index] with a warmup period of [10] seconds and a time period of [None] seconds.
+2020-01-24 11:12:48,612 ActorAddr-(T|:33293)/PID:83 esrally.track.params INFO Task-relative client at index [4] will bulk index [250000] docs starting from line offset [1000000] for [queries/None] from corpus [percolator].
+2020-01-24 11:12:48,620 ActorAddr-(T|:46087)/PID:86 esrally.driver.driver INFO Parameter source will determine when the schedule for [index] terminates.
+2020-01-24 11:12:48,619 ActorAddr-(T|:44609)/PID:82 esrally.track.params INFO Skipping 750000 lines in [/rally/.rally/benchmarks/data/percolator/queries-2.json].
+2020-01-24 11:12:48,614 ActorAddr-(T|:41267)/PID:80 esrally.track.params INFO Skipping 250000 lines in [/rally/.rally/benchmarks/data/percolator/queries-2.json].
+2020-01-24 11:12:48,615 ActorAddr-(T|:37979)/PID:79 esrally.track.params INFO Skipping 0 lines took 0.000012 s.
+2020-01-24 11:12:48,612 ActorAddr-(T|:43351)/PID:84 esrally.driver.driver INFO Parameter source will determine when the schedule for [index] terminates.
+2020-01-24 11:12:48,612 ActorAddr-(T|:44693)/PID:81 esrally.driver.driver INFO Parameter source will determine when the schedule for [index] terminates.
+2020-01-24 11:12:48,627 ActorAddr-(T|:46087)/PID:86 esrally.track.params INFO Skipping 1750000 lines in [/rally/.rally/benchmarks/data/percolator/queries-2.json].
+2020-01-24 11:12:48,619 ActorAddr-(T|:44609)/PID:82 esrally.track.params INFO Skipping 750000 lines took 0.000123 s.
+2020-01-24 11:12:48,614 ActorAddr-(T|:41267)/PID:80 esrally.track.params INFO Skipping 250000 lines took 0.000112 s.
+2020-01-24 11:12:48,614 ActorAddr-(T|:43351)/PID:84 esrally.track.params INFO Skipping 1250000 lines in [/rally/.rally/benchmarks/data/percolator/queries-2.json].
+2020-01-24 11:12:48,622 ActorAddr-(T|:44693)/PID:81 esrally.track.params INFO Skipping 500000 lines in [/rally/.rally/benchmarks/data/percolator/queries-2.json].
+2020-01-24 11:12:48,627 ActorAddr-(T|:46087)/PID:86 esrally.track.params INFO Skipping 1750000 lines took 0.000161 s.
+2020-01-24 11:12:48,614 ActorAddr-(T|:43351)/PID:84 esrally.track.params INFO Skipping 1250000 lines took 0.000141 s.
+2020-01-24 11:12:48,622 ActorAddr-(T|:44693)/PID:81 esrally.track.params INFO Skipping 500000 lines took 0.000121 s.
+2020-01-24 11:12:48,612 ActorAddr-(T|:33293)/PID:83 esrally.driver.driver INFO Creating time-period based schedule with [deterministic] distribution for [index] with a warmup period of [10] seconds and a time period of [None] seconds.
+2020-01-24 11:12:48,639 ActorAddr-(T|:33293)/PID:83 esrally.driver.driver INFO Parameter source will determine when the schedule for [index] terminates.
+2020-01-24 11:12:48,642 ActorAddr-(T|:33293)/PID:83 esrally.track.params INFO Skipping 1000000 lines in [/rally/.rally/benchmarks/data/percolator/queries-2.json].
+2020-01-24 11:12:48,642 ActorAddr-(T|:33293)/PID:83 esrally.track.params INFO Skipping 1000000 lines took 0.000127 s.
+2020-01-24 11:13:39,379 ActorAddr-(T|:44693)/PID:81 esrally.driver.driver INFO time-period-based schedule for [index] stopped due to StopIteration.
+2020-01-24 11:13:40,76 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO time-period-based schedule for [index] stopped due to StopIteration.
+2020-01-24 11:13:40,680 ActorAddr-(T|:41267)/PID:80 esrally.driver.driver INFO time-period-based schedule for [index] stopped due to StopIteration.
+2020-01-24 11:13:40,692 ActorAddr-(T|:46087)/PID:86 esrally.driver.driver INFO time-period-based schedule for [index] stopped due to StopIteration.
+2020-01-24 11:13:40,701 ActorAddr-(T|:44609)/PID:82 esrally.driver.driver INFO time-period-based schedule for [index] stopped due to StopIteration.
+2020-01-24 11:13:40,724 ActorAddr-(T|:33293)/PID:83 esrally.driver.driver INFO time-period-based schedule for [index] stopped due to StopIteration.
+2020-01-24 11:13:41,125 ActorAddr-(T|:43351)/PID:84 esrally.driver.driver INFO time-period-based schedule for [index] stopped due to StopIteration.
+2020-01-24 11:13:41,141 ActorAddr-(T|:33753)/PID:85 esrally.driver.driver INFO time-period-based schedule for [index] stopped due to StopIteration.
+2020-01-24 11:13:43,679 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] is ready for the next task.
+2020-01-24 11:13:43,680 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] reached join point [JoinPoint(4)].
+2020-01-24 11:13:43,683 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [1/8] drivers reached join point [4/15].
+2020-01-24 11:13:43,684 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] is ready for the next task.
+2020-01-24 11:13:43,684 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] reached join point [JoinPoint(4)].
+2020-01-24 11:13:43,685 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [2/8] drivers reached join point [4/15].
+2020-01-24 11:13:43,708 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] is ready for the next task.
+2020-01-24 11:13:43,708 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] reached join point [JoinPoint(4)].
+2020-01-24 11:13:43,710 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [3/8] drivers reached join point [4/15].
+2020-01-24 11:13:43,712 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] is ready for the next task.
+2020-01-24 11:13:43,712 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] reached join point [JoinPoint(4)].
+2020-01-24 11:13:43,714 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [4/8] drivers reached join point [4/15].
+2020-01-24 11:13:43,732 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] is ready for the next task.
+2020-01-24 11:13:43,733 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] reached join point [JoinPoint(4)].
+2020-01-24 11:13:43,737 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [5/8] drivers reached join point [4/15].
+2020-01-24 11:13:43,778 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] is ready for the next task.
+2020-01-24 11:13:43,778 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] reached join point [JoinPoint(4)].
+2020-01-24 11:13:43,782 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [6/8] drivers reached join point [4/15].
+2020-01-24 11:13:43,788 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is ready for the next task.
+2020-01-24 11:13:43,789 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] reached join point [JoinPoint(4)].
+2020-01-24 11:13:43,793 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [7/8] drivers reached join point [4/15].
+2020-01-24 11:13:43,845 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] is ready for the next task.
+2020-01-24 11:13:43,845 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] reached join point [JoinPoint(4)].
+2020-01-24 11:13:43,849 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [8/8] drivers reached join point [4/15].
+2020-01-24 11:13:43,882 ActorAddr-(T|:45103)/PID:12 esrally.actor INFO Task has finished.
+2020-01-24 11:13:43,883 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is continuing its work at task index [9] on [99255.481569], that is in [0:00:00.995500].
+2020-01-24 11:13:43,883 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] is continuing its work at task index [9] on [99255.483858], that is in [0:00:00.997281].
+2020-01-24 11:13:43,885 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] is continuing its work at task index [9] on [99255.483074], that is in [0:00:00.995191].
+2020-01-24 11:13:43,885 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] is continuing its work at task index [9] on [99255.481568], that is in [0:00:00.993177].
+2020-01-24 11:13:43,887 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] is continuing its work at task index [9] on [99255.481798], that is in [0:00:00.991513].
+2020-01-24 11:13:43,887 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] is continuing its work at task index [9] on [99255.483253], that is in [0:00:00.993537].
+2020-01-24 11:13:43,888 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] is continuing its work at task index [9] on [99255.481541], that is in [0:00:00.990678].
+2020-01-24 11:13:43,889 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] is continuing its work at task index [9] on [99255.481588], that is in [0:00:00.989971].
+2020-01-24 11:13:43,850 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO All drivers completed their tasks until join point [4/15].
+2020-01-24 11:13:43,883 ActorAddr-(T|:45103)/PID:12 esrally.actor INFO Bulk adding request metrics to metrics store.
+2020-01-24 11:13:43,882 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [0] at their timestamp [99255.481569] (master timestamp [99255.484809])
+2020-01-24 11:13:43,882 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [1] at their timestamp [99255.483858] (master timestamp [99255.484809])
+2020-01-24 11:13:43,884 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [2] at their timestamp [99255.483074] (master timestamp [99255.484809])
+2020-01-24 11:13:43,884 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [3] at their timestamp [99255.481568] (master timestamp [99255.484809])
+2020-01-24 11:13:43,885 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [4] at their timestamp [99255.483253] (master timestamp [99255.484809])
+2020-01-24 11:13:43,886 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [5] at their timestamp [99255.481798] (master timestamp [99255.484809])
+2020-01-24 11:13:43,887 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [6] at their timestamp [99255.481541] (master timestamp [99255.484809])
+2020-01-24 11:13:43,887 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [7] at their timestamp [99255.481588] (master timestamp [99255.484809])
+2020-01-24 11:13:44,880 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] starts driving now.
+2020-01-24 11:13:44,880 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] starts driving now.
+2020-01-24 11:13:44,880 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] starts driving now.
+2020-01-24 11:13:44,879 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] starts driving now.
+2020-01-24 11:13:44,886 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] starts driving now.
+2020-01-24 11:13:44,885 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] starts driving now.
+2020-01-24 11:13:44,884 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] starts driving now.
+2020-01-24 11:13:44,879 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] starts driving now.
+2020-01-24 11:13:44,886 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [1/8] drivers reached join point [5/15].
+2020-01-24 11:13:44,881 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is executing [refresh-after-index].
+2020-01-24 11:13:44,881 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] reached join point [JoinPoint(5)].
+2020-01-24 11:13:44,881 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] reached join point [JoinPoint(5)].
+2020-01-24 11:13:44,880 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] reached join point [JoinPoint(5)].
+2020-01-24 11:13:44,886 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] reached join point [JoinPoint(5)].
+2020-01-24 11:13:44,884 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] reached join point [JoinPoint(5)].
+2020-01-24 11:13:44,886 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [2/8] drivers reached join point [5/15].
+2020-01-24 11:13:44,886 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [3/8] drivers reached join point [5/15].
+2020-01-24 11:13:44,887 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [4/8] drivers reached join point [5/15].
+2020-01-24 11:13:44,887 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [5/8] drivers reached join point [5/15].
+2020-01-24 11:13:44,888 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [6/8] drivers reached join point [5/15].
+2020-01-24 11:13:44,889 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [7/8] drivers reached join point [5/15].
+2020-01-24 11:13:44,884 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] reached join point [JoinPoint(5)].
+2020-01-24 11:13:44,885 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] reached join point [JoinPoint(5)].
+2020-01-24 11:13:44,882 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO Choosing [deterministic scheduler] for [refresh-after-index].
+2020-01-24 11:13:44,882 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO Creating iteration-count based schedule with [deterministic] distribution for [refresh-after-index] with [0] warmup iterations and [1] iterations.
+2020-01-24 11:13:44,885 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO iteration-count-based schedule will determine when the schedule for [refresh-after-index] terminates.
+2020-01-24 11:13:47,499 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO iteration-count-based schedule for [refresh-after-index] stopped regularly.
+2020-01-24 11:13:49,887 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is ready for the next task.
+2020-01-24 11:13:49,888 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] reached join point [JoinPoint(5)].
+2020-01-24 11:13:49,891 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [8/8] drivers reached join point [5/15].
+2020-01-24 11:13:49,895 ActorAddr-(T|:45103)/PID:12 esrally.actor INFO Task has finished.
+2020-01-24 11:13:49,896 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is continuing its work at task index [11] on [99261.494167], that is in [0:00:00.994585].
+2020-01-24 11:13:49,898 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] is continuing its work at task index [11] on [99261.494540], that is in [0:00:00.993810].
+2020-01-24 11:13:49,896 ActorAddr-(T|:45103)/PID:12 esrally.actor INFO Bulk adding request metrics to metrics store.
+2020-01-24 11:13:49,901 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] is continuing its work at task index [11] on [99261.494873], that is in [0:00:00.990599].
+2020-01-24 11:13:49,904 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] is continuing its work at task index [11] on [99261.493431], that is in [0:00:00.986372].
+2020-01-24 11:13:49,905 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] is continuing its work at task index [11] on [99261.495137], that is in [0:00:00.986732].
+2020-01-24 11:13:49,907 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] is continuing its work at task index [11] on [99261.493214], that is in [0:00:00.982828].
+2020-01-24 11:13:49,909 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] is continuing its work at task index [11] on [99261.491976], that is in [0:00:00.980025].
+2020-01-24 11:13:49,911 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] is continuing its work at task index [11] on [99261.495000], that is in [0:00:00.980611].
+2020-01-24 11:13:49,892 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO All drivers completed their tasks until join point [5/15].
+2020-01-24 11:13:49,894 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [0] at their timestamp [99261.494167] (master timestamp [99261.497299])
+2020-01-24 11:13:49,896 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [1] at their timestamp [99261.494540] (master timestamp [99261.497299])
+2020-01-24 11:13:49,899 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [2] at their timestamp [99261.494873] (master timestamp [99261.497299])
+2020-01-24 11:13:49,902 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [3] at their timestamp [99261.493431] (master timestamp [99261.497299])
+2020-01-24 11:13:49,903 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [4] at their timestamp [99261.495137] (master timestamp [99261.497299])
+2020-01-24 11:13:49,904 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [5] at their timestamp [99261.493214] (master timestamp [99261.497299])
+2020-01-24 11:13:49,906 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [6] at their timestamp [99261.491976] (master timestamp [99261.497299])
+2020-01-24 11:13:49,908 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [7] at their timestamp [99261.495000] (master timestamp [99261.497299])
+2020-01-24 11:13:50,891 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] starts driving now.
+2020-01-24 11:13:50,892 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] starts driving now.
+2020-01-24 11:13:50,892 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] starts driving now.
+2020-01-24 11:13:50,894 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] starts driving now.
+2020-01-24 11:13:50,894 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] starts driving now.
+2020-01-24 11:13:50,896 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] starts driving now.
+2020-01-24 11:13:50,895 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] starts driving now.
+2020-01-24 11:13:50,898 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [1/8] drivers reached join point [6/15].
+2020-01-24 11:13:50,892 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] reached join point [JoinPoint(6)].
+2020-01-24 11:13:50,893 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] reached join point [JoinPoint(6)].
+2020-01-24 11:13:50,901 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] starts driving now.
+2020-01-24 11:13:50,893 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] reached join point [JoinPoint(6)].
+2020-01-24 11:13:50,895 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] reached join point [JoinPoint(6)].
+2020-01-24 11:13:50,895 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] reached join point [JoinPoint(6)].
+2020-01-24 11:13:50,896 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] reached join point [JoinPoint(6)].
+2020-01-24 11:13:50,899 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] reached join point [JoinPoint(6)].
+2020-01-24 11:13:50,899 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [2/8] drivers reached join point [6/15].
+2020-01-24 11:13:50,902 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is executing [force-merge].
+2020-01-24 11:13:50,900 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [3/8] drivers reached join point [6/15].
+2020-01-24 11:13:50,903 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO Choosing [deterministic scheduler] for [force-merge].
+2020-01-24 11:13:50,902 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [4/8] drivers reached join point [6/15].
+2020-01-24 11:13:50,903 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO Creating iteration-count based schedule with [deterministic] distribution for [force-merge] with [0] warmup iterations and [1] iterations.
+2020-01-24 11:13:50,903 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [5/8] drivers reached join point [6/15].
+2020-01-24 11:13:50,905 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO iteration-count-based schedule will determine when the schedule for [force-merge] terminates.
+2020-01-24 11:13:50,905 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [6/8] drivers reached join point [6/15].
+2020-01-24 11:13:50,906 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [7/8] drivers reached join point [6/15].
+2020-01-24 11:13:55,383 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO iteration-count-based schedule for [force-merge] stopped regularly.
+2020-01-24 11:13:55,906 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is ready for the next task.
+2020-01-24 11:13:55,906 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] reached join point [JoinPoint(6)].
+2020-01-24 11:13:55,914 ActorAddr-(T|:45103)/PID:12 esrally.actor INFO Task has finished.
+2020-01-24 11:13:55,919 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] is continuing its work at task index [13] on [99267.509144], that is in [0:00:00.986916].
+2020-01-24 11:13:55,921 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] is continuing its work at task index [13] on [99267.511917], that is in [0:00:00.988187].
+2020-01-24 11:13:55,918 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] is continuing its work at task index [13] on [99267.511010], that is in [0:00:00.989705].
+2020-01-24 11:13:55,916 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] is continuing its work at task index [13] on [99267.509571], that is in [0:00:00.990095].
+2020-01-24 11:13:55,922 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] is continuing its work at task index [13] on [99267.509128], that is in [0:00:00.984507].
+2020-01-24 11:13:55,920 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] is continuing its work at task index [13] on [99267.507407], that is in [0:00:00.984296].
+2020-01-24 11:13:55,915 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] is continuing its work at task index [13] on [99267.510523], that is in [0:00:00.992594].
+2020-01-24 11:13:55,912 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [8/8] drivers reached join point [6/15].
+2020-01-24 11:13:55,916 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is continuing its work at task index [13] on [99267.511302], that is in [0:00:00.992553].
+2020-01-24 11:13:55,914 ActorAddr-(T|:45103)/PID:12 esrally.actor INFO Bulk adding request metrics to metrics store.
+2020-01-24 11:13:55,912 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO All drivers completed their tasks until join point [6/15].
+2020-01-24 11:13:55,913 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [0] at their timestamp [99267.511302] (master timestamp [99267.516345])
+2020-01-24 11:13:55,914 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [1] at their timestamp [99267.510523] (master timestamp [99267.516345])
+2020-01-24 11:13:55,915 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [2] at their timestamp [99267.509571] (master timestamp [99267.516345])
+2020-01-24 11:13:55,916 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [3] at their timestamp [99267.511917] (master timestamp [99267.516345])
+2020-01-24 11:13:55,916 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [4] at their timestamp [99267.509128] (master timestamp [99267.516345])
+2020-01-24 11:13:55,917 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [5] at their timestamp [99267.511010] (master timestamp [99267.516345])
+2020-01-24 11:13:55,918 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [6] at their timestamp [99267.509144] (master timestamp [99267.516345])
+2020-01-24 11:13:55,918 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [7] at their timestamp [99267.507407] (master timestamp [99267.516345])
+2020-01-24 11:13:56,906 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] starts driving now.
+2020-01-24 11:13:56,907 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] starts driving now.
+2020-01-24 11:13:56,906 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] reached join point [JoinPoint(7)].
+2020-01-24 11:13:56,908 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] starts driving now.
+2020-01-24 11:13:56,907 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] reached join point [JoinPoint(7)].
+2020-01-24 11:13:56,908 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [1/8] drivers reached join point [7/15].
+2020-01-24 11:13:56,909 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] starts driving now.
+2020-01-24 11:13:56,908 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] reached join point [JoinPoint(7)].
+2020-01-24 11:13:56,910 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] starts driving now.
+2020-01-24 11:13:56,911 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] starts driving now.
+2020-01-24 11:13:56,910 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] starts driving now.
+2020-01-24 11:13:56,910 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] starts driving now.
+2020-01-24 11:13:56,910 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [2/8] drivers reached join point [7/15].
+2020-01-24 11:13:56,909 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] reached join point [JoinPoint(7)].
+2020-01-24 11:13:56,911 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] reached join point [JoinPoint(7)].
+2020-01-24 11:13:56,912 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] reached join point [JoinPoint(7)].
+2020-01-24 11:13:56,911 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] reached join point [JoinPoint(7)].
+2020-01-24 11:13:56,912 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [3/8] drivers reached join point [7/15].
+2020-01-24 11:13:56,911 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is executing [refresh-after-force-merge].
+2020-01-24 11:13:56,913 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [4/8] drivers reached join point [7/15].
+2020-01-24 11:13:56,911 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO Choosing [deterministic scheduler] for [refresh-after-force-merge].
+2020-01-24 11:13:56,914 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [5/8] drivers reached join point [7/15].
+2020-01-24 11:13:56,911 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO Creating iteration-count based schedule with [deterministic] distribution for [refresh-after-force-merge] with [0] warmup iterations and [1] iterations.
+2020-01-24 11:13:56,916 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [6/8] drivers reached join point [7/15].
+2020-01-24 11:13:56,912 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO iteration-count-based schedule will determine when the schedule for [refresh-after-force-merge] terminates.
+2020-01-24 11:13:56,916 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [7/8] drivers reached join point [7/15].
+2020-01-24 11:13:56,929 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO iteration-count-based schedule for [refresh-after-force-merge] stopped regularly.
+2020-01-24 11:14:01,917 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is ready for the next task.
+2020-01-24 11:14:01,917 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] reached join point [JoinPoint(7)].
+2020-01-24 11:14:01,918 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [8/8] drivers reached join point [7/15].
+2020-01-24 11:14:01,919 ActorAddr-(T|:45103)/PID:12 esrally.actor INFO Task has finished.
+2020-01-24 11:14:01,920 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is continuing its work at task index [15] on [99273.521051], that is in [0:00:00.998230].
+2020-01-24 11:14:01,920 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] is continuing its work at task index [15] on [99273.517065], that is in [0:00:00.993876].
+2020-01-24 11:14:01,920 ActorAddr-(T|:45103)/PID:12 esrally.actor INFO Bulk adding request metrics to metrics store.
+2020-01-24 11:14:01,921 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] is continuing its work at task index [15] on [99273.518431], that is in [0:00:00.994041].
+2020-01-24 11:14:01,923 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] is continuing its work at task index [15] on [99273.519045], that is in [0:00:00.993390].
+2020-01-24 11:14:01,923 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] is continuing its work at task index [15] on [99273.520189], that is in [0:00:00.994122].
+2020-01-24 11:14:01,923 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] is continuing its work at task index [15] on [99273.517483], that is in [0:00:00.991027].
+2020-01-24 11:14:01,925 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] is continuing its work at task index [15] on [99273.518889], that is in [0:00:00.991113].
+2020-01-24 11:14:01,925 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] is continuing its work at task index [15] on [99273.520290], that is in [0:00:00.992094].
+2020-01-24 11:14:01,918 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO All drivers completed their tasks until join point [7/15].
+2020-01-24 11:14:01,919 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [0] at their timestamp [99273.521051] (master timestamp [99273.522061])
+2020-01-24 11:14:01,919 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [1] at their timestamp [99273.517065] (master timestamp [99273.522061])
+2020-01-24 11:14:01,921 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [2] at their timestamp [99273.518431] (master timestamp [99273.522061])
+2020-01-24 11:14:01,922 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [3] at their timestamp [99273.519045] (master timestamp [99273.522061])
+2020-01-24 11:14:01,922 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [4] at their timestamp [99273.520189] (master timestamp [99273.522061])
+2020-01-24 11:14:01,923 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [5] at their timestamp [99273.517483] (master timestamp [99273.522061])
+2020-01-24 11:14:01,924 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [6] at their timestamp [99273.518889] (master timestamp [99273.522061])
+2020-01-24 11:14:01,924 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [7] at their timestamp [99273.520290] (master timestamp [99273.522061])
+2020-01-24 11:14:02,916 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] starts driving now.
+2020-01-24 11:14:02,916 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] starts driving now.
+2020-01-24 11:14:02,917 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] starts driving now.
+2020-01-24 11:14:02,916 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] reached join point [JoinPoint(8)].
+2020-01-24 11:14:02,919 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] starts driving now.
+2020-01-24 11:14:02,918 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] reached join point [JoinPoint(8)].
+2020-01-24 11:14:02,922 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] starts driving now.
+2020-01-24 11:14:02,920 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] reached join point [JoinPoint(8)].
+2020-01-24 11:14:02,919 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] starts driving now.
+2020-01-24 11:14:02,923 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [1/8] drivers reached join point [8/15].
+2020-01-24 11:14:02,922 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] reached join point [JoinPoint(8)].
+2020-01-24 11:14:02,923 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] starts driving now.
+2020-01-24 11:14:02,929 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] starts driving now.
+2020-01-24 11:14:02,924 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [2/8] drivers reached join point [8/15].
+2020-01-24 11:14:02,925 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] reached join point [JoinPoint(8)].
+2020-01-24 11:14:02,928 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] reached join point [JoinPoint(8)].
+2020-01-24 11:14:02,917 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] reached join point [JoinPoint(8)].
+2020-01-24 11:14:02,925 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [3/8] drivers reached join point [8/15].
+2020-01-24 11:14:02,930 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is executing [percolator_with_content_president_bush].
+2020-01-24 11:14:02,930 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [4/8] drivers reached join point [8/15].
+2020-01-24 11:14:02,931 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO Choosing [deterministic scheduler] for [percolator_with_content_president_bush].
+2020-01-24 11:14:02,931 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [5/8] drivers reached join point [8/15].
+2020-01-24 11:14:02,932 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO Creating iteration-count based schedule with [deterministic] distribution for [percolator_with_content_president_bush] with [100] warmup iterations and [100] iterations.
+2020-01-24 11:14:02,934 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [6/8] drivers reached join point [8/15].
+2020-01-24 11:14:02,933 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO iteration-count-based schedule will determine when the schedule for [percolator_with_content_president_bush] terminates.
+2020-01-24 11:14:02,935 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [7/8] drivers reached join point [8/15].
+2020-01-24 11:14:10,369 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO iteration-count-based schedule for [percolator_with_content_president_bush] stopped regularly.
+2020-01-24 11:14:12,942 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is ready for the next task.
+2020-01-24 11:14:12,943 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] reached join point [JoinPoint(8)].
+2020-01-24 11:14:12,948 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [8/8] drivers reached join point [8/15].
+2020-01-24 11:14:12,978 ActorAddr-(T|:45103)/PID:12 esrally.actor INFO Task has finished.
+2020-01-24 11:14:12,979 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is continuing its work at task index [17] on [99284.575221], that is in [0:00:00.993461].
+2020-01-24 11:14:12,980 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] is continuing its work at task index [17] on [99284.573646], that is in [0:00:00.991027].
+2020-01-24 11:14:12,982 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] is continuing its work at task index [17] on [99284.574233], that is in [0:00:00.989521].
+2020-01-24 11:14:12,984 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] is continuing its work at task index [17] on [99284.573074], that is in [0:00:00.986397].
+2020-01-24 11:14:12,984 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] is continuing its work at task index [17] on [99284.571036], that is in [0:00:00.983954].
+2020-01-24 11:14:12,978 ActorAddr-(T|:45103)/PID:12 esrally.actor INFO Bulk adding request metrics to metrics store.
+2020-01-24 11:14:12,985 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] is continuing its work at task index [17] on [99284.572217], that is in [0:00:00.983817].
+2020-01-24 11:14:12,987 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] is continuing its work at task index [17] on [99284.570078], that is in [0:00:00.979830].
+2020-01-24 11:14:12,987 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] is continuing its work at task index [17] on [99284.573622], that is in [0:00:00.983817].
+2020-01-24 11:14:12,949 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO All drivers completed their tasks until join point [8/15].
+2020-01-24 11:14:12,977 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [0] at their timestamp [99284.575221] (master timestamp [99284.579987])
+2020-01-24 11:14:12,978 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [1] at their timestamp [99284.573646] (master timestamp [99284.579987])
+2020-01-24 11:14:12,980 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [2] at their timestamp [99284.574233] (master timestamp [99284.579987])
+2020-01-24 11:14:12,982 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [3] at their timestamp [99284.573074] (master timestamp [99284.579987])
+2020-01-24 11:14:12,983 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [4] at their timestamp [99284.571036] (master timestamp [99284.579987])
+2020-01-24 11:14:12,984 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [5] at their timestamp [99284.572217] (master timestamp [99284.579987])
+2020-01-24 11:14:12,986 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [6] at their timestamp [99284.573622] (master timestamp [99284.579987])
+2020-01-24 11:14:12,986 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [7] at their timestamp [99284.570078] (master timestamp [99284.579987])
+2020-01-24 11:14:13,969 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] starts driving now.
+2020-01-24 11:14:13,969 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] starts driving now.
+2020-01-24 11:14:13,971 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] starts driving now.
+2020-01-24 11:14:13,971 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] starts driving now.
+2020-01-24 11:14:13,972 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] starts driving now.
+2020-01-24 11:14:13,972 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] starts driving now.
+2020-01-24 11:14:13,974 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] starts driving now.
+2020-01-24 11:14:13,975 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] starts driving now.
+2020-01-24 11:14:13,970 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] reached join point [JoinPoint(9)].
+2020-01-24 11:14:13,972 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] reached join point [JoinPoint(9)].
+2020-01-24 11:14:13,973 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] reached join point [JoinPoint(9)].
+2020-01-24 11:14:13,973 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] reached join point [JoinPoint(9)].
+2020-01-24 11:14:13,976 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [1/8] drivers reached join point [9/15].
+2020-01-24 11:14:13,972 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] reached join point [JoinPoint(9)].
+2020-01-24 11:14:13,974 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is executing [percolator_with_content_saddam_hussein].
+2020-01-24 11:14:13,975 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] reached join point [JoinPoint(9)].
+2020-01-24 11:14:13,970 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] reached join point [JoinPoint(9)].
+2020-01-24 11:14:13,977 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [2/8] drivers reached join point [9/15].
+2020-01-24 11:14:13,975 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO Choosing [deterministic scheduler] for [percolator_with_content_saddam_hussein].
+2020-01-24 11:14:13,977 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [3/8] drivers reached join point [9/15].
+2020-01-24 11:14:13,975 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO Creating iteration-count based schedule with [deterministic] distribution for [percolator_with_content_saddam_hussein] with [100] warmup iterations and [100] iterations.
+2020-01-24 11:14:13,977 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [4/8] drivers reached join point [9/15].
+2020-01-24 11:14:13,975 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO iteration-count-based schedule will determine when the schedule for [percolator_with_content_saddam_hussein] terminates.
+2020-01-24 11:14:13,977 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [5/8] drivers reached join point [9/15].
+2020-01-24 11:14:13,979 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [6/8] drivers reached join point [9/15].
+2020-01-24 11:14:13,982 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [7/8] drivers reached join point [9/15].
+2020-01-24 11:14:17,962 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO iteration-count-based schedule for [percolator_with_content_saddam_hussein] stopped regularly.
+2020-01-24 11:14:18,981 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is ready for the next task.
+2020-01-24 11:14:18,982 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] reached join point [JoinPoint(9)].
+2020-01-24 11:14:18,987 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [8/8] drivers reached join point [9/15].
+2020-01-24 11:14:19,14 ActorAddr-(T|:45103)/PID:12 esrally.actor INFO Task has finished.
+2020-01-24 11:14:19,16 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] is continuing its work at task index [19] on [99290.613471], that is in [0:00:00.994854].
+2020-01-24 11:14:19,18 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] is continuing its work at task index [19] on [99290.611748], that is in [0:00:00.990280].
+2020-01-24 11:14:19,16 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] is continuing its work at task index [19] on [99290.612315], that is in [0:00:00.992874].
+2020-01-24 11:14:19,15 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is continuing its work at task index [19] on [99290.611692], that is in [0:00:00.993971].
+2020-01-24 11:14:19,19 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] is continuing its work at task index [19] on [99290.603784], that is in [0:00:00.981588].
+2020-01-24 11:14:19,21 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] is continuing its work at task index [19] on [99290.611391], that is in [0:00:00.987509].
+2020-01-24 11:14:19,14 ActorAddr-(T|:45103)/PID:12 esrally.actor INFO Bulk adding request metrics to metrics store.
+2020-01-24 11:14:19,21 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] is continuing its work at task index [19] on [99290.612313], that is in [0:00:00.987730].
+2020-01-24 11:14:19,23 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] is continuing its work at task index [19] on [99290.608838], that is in [0:00:00.982348].
+2020-01-24 11:14:18,987 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO All drivers completed their tasks until join point [9/15].
+2020-01-24 11:14:19,13 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [0] at their timestamp [99290.611692] (master timestamp [99290.615874])
+2020-01-24 11:14:19,14 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [1] at their timestamp [99290.613471] (master timestamp [99290.615874])
+2020-01-24 11:14:19,15 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [2] at their timestamp [99290.612315] (master timestamp [99290.615874])
+2020-01-24 11:14:19,17 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [3] at their timestamp [99290.611748] (master timestamp [99290.615874])
+2020-01-24 11:14:19,18 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [4] at their timestamp [99290.603784] (master timestamp [99290.615874])
+2020-01-24 11:14:19,19 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [5] at their timestamp [99290.611391] (master timestamp [99290.615874])
+2020-01-24 11:14:19,20 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [6] at their timestamp [99290.612313] (master timestamp [99290.615874])
+2020-01-24 11:14:19,22 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [7] at their timestamp [99290.608838] (master timestamp [99290.615874])
+2020-01-24 11:14:20,3 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] starts driving now.
+2020-01-24 11:14:20,4 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] reached join point [JoinPoint(10)].
+2020-01-24 11:14:20,7 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] starts driving now.
+2020-01-24 11:14:20,6 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [1/8] drivers reached join point [10/15].
+2020-01-24 11:14:20,11 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] starts driving now.
+2020-01-24 11:14:20,11 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] starts driving now.
+2020-01-24 11:14:20,9 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] starts driving now.
+2020-01-24 11:14:20,13 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] starts driving now.
+2020-01-24 11:14:20,8 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] reached join point [JoinPoint(10)].
+2020-01-24 11:14:20,13 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [2/8] drivers reached join point [10/15].
+2020-01-24 11:14:20,13 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] starts driving now.
+2020-01-24 11:14:20,11 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] starts driving now.
+2020-01-24 11:14:20,12 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] reached join point [JoinPoint(10)].
+2020-01-24 11:14:20,12 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is executing [percolator_with_content_hurricane_katrina].
+2020-01-24 11:14:20,13 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] reached join point [JoinPoint(10)].
+2020-01-24 11:14:20,10 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] reached join point [JoinPoint(10)].
+2020-01-24 11:14:20,14 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [3/8] drivers reached join point [10/15].
+2020-01-24 11:14:20,13 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO Choosing [deterministic scheduler] for [percolator_with_content_hurricane_katrina].
+2020-01-24 11:14:20,13 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO Creating iteration-count based schedule with [deterministic] distribution for [percolator_with_content_hurricane_katrina] with [100] warmup iterations and [100] iterations.
+2020-01-24 11:14:20,16 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [4/8] drivers reached join point [10/15].
+2020-01-24 11:14:20,13 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO iteration-count-based schedule will determine when the schedule for [percolator_with_content_hurricane_katrina] terminates.
+2020-01-24 11:14:20,16 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [5/8] drivers reached join point [10/15].
+2020-01-24 11:14:20,14 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] reached join point [JoinPoint(10)].
+2020-01-24 11:14:20,15 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] reached join point [JoinPoint(10)].
+2020-01-24 11:14:20,16 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [6/8] drivers reached join point [10/15].
+2020-01-24 11:14:20,17 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [7/8] drivers reached join point [10/15].
+2020-01-24 11:14:24,7 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO iteration-count-based schedule for [percolator_with_content_hurricane_katrina] stopped regularly.
+2020-01-24 11:14:25,19 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is ready for the next task.
+2020-01-24 11:14:25,20 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] reached join point [JoinPoint(10)].
+2020-01-24 11:14:25,25 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [8/8] drivers reached join point [10/15].
+2020-01-24 11:14:25,51 ActorAddr-(T|:45103)/PID:12 esrally.actor INFO Task has finished.
+2020-01-24 11:14:25,52 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is continuing its work at task index [21] on [99296.648764], that is in [0:00:00.993970].
+2020-01-24 11:14:25,53 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] is continuing its work at task index [21] on [99296.650486], that is in [0:00:00.994854].
+2020-01-24 11:14:25,54 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] is continuing its work at task index [21] on [99296.649967], that is in [0:00:00.992687].
+2020-01-24 11:14:25,55 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] is continuing its work at task index [21] on [99296.651066], that is in [0:00:00.993122].
+2020-01-24 11:14:25,56 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] is continuing its work at task index [21] on [99296.650949], that is in [0:00:00.992240].
+2020-01-24 11:14:25,51 ActorAddr-(T|:45103)/PID:12 esrally.actor INFO Bulk adding request metrics to metrics store.
+2020-01-24 11:14:25,58 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] is continuing its work at task index [21] on [99296.649246], that is in [0:00:00.988623].
+2020-01-24 11:14:25,58 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] is continuing its work at task index [21] on [99296.650352], that is in [0:00:00.989292].
+2020-01-24 11:14:25,60 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] is continuing its work at task index [21] on [99296.648568], that is in [0:00:00.985902].
+2020-01-24 11:14:25,26 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO All drivers completed their tasks until join point [10/15].
+2020-01-24 11:14:25,50 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [0] at their timestamp [99296.648764] (master timestamp [99296.653015])
+2020-01-24 11:14:25,51 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [1] at their timestamp [99296.650486] (master timestamp [99296.653015])
+2020-01-24 11:14:25,53 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [2] at their timestamp [99296.649967] (master timestamp [99296.653015])
+2020-01-24 11:14:25,54 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [3] at their timestamp [99296.651066] (master timestamp [99296.653015])
+2020-01-24 11:14:25,54 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [4] at their timestamp [99296.650949] (master timestamp [99296.653015])
+2020-01-24 11:14:25,56 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [5] at their timestamp [99296.649246] (master timestamp [99296.653015])
+2020-01-24 11:14:25,57 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [6] at their timestamp [99296.650352] (master timestamp [99296.653015])
+2020-01-24 11:14:25,58 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [7] at their timestamp [99296.648568] (master timestamp [99296.653015])
+2020-01-24 11:14:26,47 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] starts driving now.
+2020-01-24 11:14:26,47 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] starts driving now.
+2020-01-24 11:14:26,47 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] starts driving now.
+2020-01-24 11:14:26,52 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] starts driving now.
+2020-01-24 11:14:26,49 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] starts driving now.
+2020-01-24 11:14:26,54 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] starts driving now.
+2020-01-24 11:14:26,49 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] starts driving now.
+2020-01-24 11:14:26,53 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [1/8] drivers reached join point [11/15].
+2020-01-24 11:14:26,55 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] starts driving now.
+2020-01-24 11:14:26,48 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is executing [percolator_with_content_google].
+2020-01-24 11:14:26,48 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] reached join point [JoinPoint(11)].
+2020-01-24 11:14:26,48 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] reached join point [JoinPoint(11)].
+2020-01-24 11:14:26,53 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] reached join point [JoinPoint(11)].
+2020-01-24 11:14:26,50 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] reached join point [JoinPoint(11)].
+2020-01-24 11:14:26,50 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] reached join point [JoinPoint(11)].
+2020-01-24 11:14:26,55 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] reached join point [JoinPoint(11)].
+2020-01-24 11:14:26,54 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [2/8] drivers reached join point [11/15].
+2020-01-24 11:14:26,56 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] reached join point [JoinPoint(11)].
+2020-01-24 11:14:26,51 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO Choosing [deterministic scheduler] for [percolator_with_content_google].
+2020-01-24 11:14:26,64 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [3/8] drivers reached join point [11/15].
+2020-01-24 11:14:26,52 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO Creating iteration-count based schedule with [deterministic] distribution for [percolator_with_content_google] with [100] warmup iterations and [100] iterations.
+2020-01-24 11:14:26,65 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [4/8] drivers reached join point [11/15].
+2020-01-24 11:14:26,53 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO iteration-count-based schedule will determine when the schedule for [percolator_with_content_google] terminates.
+2020-01-24 11:14:26,70 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [5/8] drivers reached join point [11/15].
+2020-01-24 11:14:26,70 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [6/8] drivers reached join point [11/15].
+2020-01-24 11:14:26,72 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [7/8] drivers reached join point [11/15].
+2020-01-24 11:14:33,416 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO iteration-count-based schedule for [percolator_with_content_google] stopped regularly.
+2020-01-24 11:14:36,62 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is ready for the next task.
+2020-01-24 11:14:36,62 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] reached join point [JoinPoint(11)].
+2020-01-24 11:14:36,67 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [8/8] drivers reached join point [11/15].
+2020-01-24 11:14:36,94 ActorAddr-(T|:45103)/PID:12 esrally.actor INFO Task has finished.
+2020-01-24 11:14:36,95 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is continuing its work at task index [23] on [99307.692568], that is in [0:00:00.994414].
+2020-01-24 11:14:36,96 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] is continuing its work at task index [23] on [99307.680224], that is in [0:00:00.981287].
+2020-01-24 11:14:36,97 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] is continuing its work at task index [23] on [99307.682544], that is in [0:00:00.981971].
+2020-01-24 11:14:36,98 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] is continuing its work at task index [23] on [99307.682738], that is in [0:00:00.981508].
+2020-01-24 11:14:36,95 ActorAddr-(T|:45103)/PID:12 esrally.actor INFO Bulk adding request metrics to metrics store.
+2020-01-24 11:14:36,100 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] is continuing its work at task index [23] on [99307.680103], that is in [0:00:00.976584].
+2020-01-24 11:14:36,102 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] is continuing its work at task index [23] on [99307.692098], that is in [0:00:00.986705].
+2020-01-24 11:14:36,103 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] is continuing its work at task index [23] on [99307.691284], that is in [0:00:00.984680].
+2020-01-24 11:14:36,103 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] is continuing its work at task index [23] on [99307.681870], that is in [0:00:00.975900].
+2020-01-24 11:14:36,68 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO All drivers completed their tasks until join point [11/15].
+2020-01-24 11:14:36,93 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [0] at their timestamp [99307.692568] (master timestamp [99307.696445])
+2020-01-24 11:14:36,94 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [1] at their timestamp [99307.680224] (master timestamp [99307.696445])
+2020-01-24 11:14:36,96 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [2] at their timestamp [99307.682544] (master timestamp [99307.696445])
+2020-01-24 11:14:36,97 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [3] at their timestamp [99307.682738] (master timestamp [99307.696445])
+2020-01-24 11:14:36,99 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [4] at their timestamp [99307.680103] (master timestamp [99307.696445])
+2020-01-24 11:14:36,101 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [5] at their timestamp [99307.692098] (master timestamp [99307.696445])
+2020-01-24 11:14:36,102 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [6] at their timestamp [99307.681870] (master timestamp [99307.696445])
+2020-01-24 11:14:36,102 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [7] at their timestamp [99307.691284] (master timestamp [99307.696445])
+2020-01-24 11:14:37,79 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] starts driving now.
+2020-01-24 11:14:37,79 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] starts driving now.
+2020-01-24 11:14:37,81 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] starts driving now.
+2020-01-24 11:14:37,80 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] reached join point [JoinPoint(12)].
+2020-01-24 11:14:37,80 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] reached join point [JoinPoint(12)].
+2020-01-24 11:14:37,83 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] starts driving now.
+2020-01-24 11:14:37,81 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] reached join point [JoinPoint(12)].
+2020-01-24 11:14:37,84 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] starts driving now.
+2020-01-24 11:14:37,84 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] reached join point [JoinPoint(12)].
+2020-01-24 11:14:37,85 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [1/8] drivers reached join point [12/15].
+2020-01-24 11:14:37,84 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] reached join point [JoinPoint(12)].
+2020-01-24 11:14:37,85 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [2/8] drivers reached join point [12/15].
+2020-01-24 11:14:37,85 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [3/8] drivers reached join point [12/15].
+2020-01-24 11:14:37,86 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [4/8] drivers reached join point [12/15].
+2020-01-24 11:14:37,86 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [5/8] drivers reached join point [12/15].
+2020-01-24 11:14:37,90 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] starts driving now.
+2020-01-24 11:14:37,91 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] starts driving now.
+2020-01-24 11:14:37,91 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] starts driving now.
+2020-01-24 11:14:37,91 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [6/8] drivers reached join point [12/15].
+2020-01-24 11:14:37,90 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] reached join point [JoinPoint(12)].
+2020-01-24 11:14:37,91 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is executing [percolator_no_score_with_content_google].
+2020-01-24 11:14:37,91 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] reached join point [JoinPoint(12)].
+2020-01-24 11:14:37,92 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [7/8] drivers reached join point [12/15].
+2020-01-24 11:14:37,92 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO Choosing [deterministic scheduler] for [percolator_no_score_with_content_google].
+2020-01-24 11:14:37,92 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO Creating iteration-count based schedule with [deterministic] distribution for [percolator_no_score_with_content_google] with [100] warmup iterations and [100] iterations.
+2020-01-24 11:14:37,93 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO iteration-count-based schedule will determine when the schedule for [percolator_no_score_with_content_google] terminates.
+2020-01-24 11:14:39,266 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO iteration-count-based schedule for [percolator_no_score_with_content_google] stopped regularly.
+2020-01-24 11:14:42,99 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is ready for the next task.
+2020-01-24 11:14:42,100 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] reached join point [JoinPoint(12)].
+2020-01-24 11:14:42,102 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [8/8] drivers reached join point [12/15].
+2020-01-24 11:14:42,117 ActorAddr-(T|:45103)/PID:12 esrally.actor INFO Task has finished.
+2020-01-24 11:14:42,118 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is continuing its work at task index [25] on [99313.716860], that is in [0:00:00.996077].
+2020-01-24 11:14:42,118 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] is continuing its work at task index [25] on [99313.715178], that is in [0:00:00.993879].
+2020-01-24 11:14:42,120 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] is continuing its work at task index [25] on [99313.717427], that is in [0:00:00.994480].
+2020-01-24 11:14:42,121 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] is continuing its work at task index [25] on [99313.717612], that is in [0:00:00.993953].
+2020-01-24 11:14:42,121 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] is continuing its work at task index [25] on [99313.714856], that is in [0:00:00.990566].
+2020-01-24 11:14:42,117 ActorAddr-(T|:45103)/PID:12 esrally.actor INFO Bulk adding request metrics to metrics store.
+2020-01-24 11:14:42,123 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] is continuing its work at task index [25] on [99313.718668], that is in [0:00:00.992077].
+2020-01-24 11:14:42,124 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] is continuing its work at task index [25] on [99313.716207], that is in [0:00:00.988839].
+2020-01-24 11:14:42,125 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] is continuing its work at task index [25] on [99313.718735], that is in [0:00:00.990683].
+2020-01-24 11:14:42,103 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO All drivers completed their tasks until join point [12/15].
+2020-01-24 11:14:42,116 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [0] at their timestamp [99313.716860] (master timestamp [99313.719406])
+2020-01-24 11:14:42,117 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [1] at their timestamp [99313.715178] (master timestamp [99313.719406])
+2020-01-24 11:14:42,118 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [2] at their timestamp [99313.717427] (master timestamp [99313.719406])
+2020-01-24 11:14:42,119 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [3] at their timestamp [99313.717612] (master timestamp [99313.719406])
+2020-01-24 11:14:42,120 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [4] at their timestamp [99313.714856] (master timestamp [99313.719406])
+2020-01-24 11:14:42,122 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [5] at their timestamp [99313.718668] (master timestamp [99313.719406])
+2020-01-24 11:14:42,123 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [6] at their timestamp [99313.716207] (master timestamp [99313.719406])
+2020-01-24 11:14:42,124 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [7] at their timestamp [99313.718735] (master timestamp [99313.719406])
+2020-01-24 11:14:43,114 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] starts driving now.
+2020-01-24 11:14:43,115 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] starts driving now.
+2020-01-24 11:14:43,114 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] starts driving now.
+2020-01-24 11:14:43,117 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] starts driving now.
+2020-01-24 11:14:43,117 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] starts driving now.
+2020-01-24 11:14:43,115 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] starts driving now.
+2020-01-24 11:14:43,120 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] starts driving now.
+2020-01-24 11:14:43,114 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] reached join point [JoinPoint(13)].
+2020-01-24 11:14:43,123 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] starts driving now.
+2020-01-24 11:14:43,116 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is executing [percolator_with_highlighting].
+2020-01-24 11:14:43,115 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] reached join point [JoinPoint(13)].
+2020-01-24 11:14:43,118 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] reached join point [JoinPoint(13)].
+2020-01-24 11:14:43,118 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] reached join point [JoinPoint(13)].
+2020-01-24 11:14:43,116 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] reached join point [JoinPoint(13)].
+2020-01-24 11:14:43,121 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] reached join point [JoinPoint(13)].
+2020-01-24 11:14:43,124 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] reached join point [JoinPoint(13)].
+2020-01-24 11:14:43,117 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO Choosing [deterministic scheduler] for [percolator_with_highlighting].
+2020-01-24 11:14:43,136 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [1/8] drivers reached join point [13/15].
+2020-01-24 11:14:43,117 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO Creating iteration-count based schedule with [deterministic] distribution for [percolator_with_highlighting] with [100] warmup iterations and [100] iterations.
+2020-01-24 11:14:43,137 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [2/8] drivers reached join point [13/15].
+2020-01-24 11:14:43,119 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO iteration-count-based schedule will determine when the schedule for [percolator_with_highlighting] terminates.
+2020-01-24 11:14:43,137 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [3/8] drivers reached join point [13/15].
+2020-01-24 11:14:43,138 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [4/8] drivers reached join point [13/15].
+2020-01-24 11:14:43,139 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [5/8] drivers reached join point [13/15].
+2020-01-24 11:14:43,140 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [6/8] drivers reached join point [13/15].
+2020-01-24 11:14:43,140 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [7/8] drivers reached join point [13/15].
+2020-01-24 11:14:47,107 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO iteration-count-based schedule for [percolator_with_highlighting] stopped regularly.
+2020-01-24 11:14:48,124 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is ready for the next task.
+2020-01-24 11:14:48,124 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] reached join point [JoinPoint(13)].
+2020-01-24 11:14:48,126 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [8/8] drivers reached join point [13/15].
+2020-01-24 11:14:48,134 ActorAddr-(T|:45103)/PID:12 esrally.actor INFO Task has finished.
+2020-01-24 11:14:48,137 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] is continuing its work at task index [27] on [99319.714164], that is in [0:00:00.974030].
+2020-01-24 11:14:48,135 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] is continuing its work at task index [27] on [99319.716521], that is in [0:00:00.978412].
+2020-01-24 11:14:48,135 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] is continuing its work at task index [27] on [99319.718792], that is in [0:00:00.980311].
+2020-01-24 11:14:48,137 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] is continuing its work at task index [27] on [99319.717882], that is in [0:00:00.978154].
+2020-01-24 11:14:48,137 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] is continuing its work at task index [27] on [99319.719099], that is in [0:00:00.978553].
+2020-01-24 11:14:48,135 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is continuing its work at task index [27] on [99319.735611], that is in [0:00:00.997900].
+2020-01-24 11:14:48,139 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] is continuing its work at task index [27] on [99319.713559], that is in [0:00:00.971778].
+2020-01-24 11:14:48,139 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] is continuing its work at task index [27] on [99319.720839], that is in [0:00:00.978664].
+2020-01-24 11:14:48,134 ActorAddr-(T|:45103)/PID:12 esrally.actor INFO Bulk adding request metrics to metrics store.
+2020-01-24 11:14:48,126 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO All drivers completed their tasks until join point [13/15].
+2020-01-24 11:14:48,134 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [0] at their timestamp [99319.735611] (master timestamp [99319.736912])
+2020-01-24 11:14:48,134 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [1] at their timestamp [99319.716521] (master timestamp [99319.736912])
+2020-01-24 11:14:48,135 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [2] at their timestamp [99319.718792] (master timestamp [99319.736912])
+2020-01-24 11:14:48,136 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [3] at their timestamp [99319.717882] (master timestamp [99319.736912])
+2020-01-24 11:14:48,136 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [4] at their timestamp [99319.714164] (master timestamp [99319.736912])
+2020-01-24 11:14:48,137 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [5] at their timestamp [99319.719099] (master timestamp [99319.736912])
+2020-01-24 11:14:48,138 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [6] at their timestamp [99319.713559] (master timestamp [99319.736912])
+2020-01-24 11:14:48,138 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO Scheduling next task for client id [7] at their timestamp [99319.720839] (master timestamp [99319.736912])
+2020-01-24 11:14:49,111 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] starts driving now.
+2020-01-24 11:14:49,113 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] starts driving now.
+2020-01-24 11:14:49,112 ActorAddr-(T|:33753)/PID:85 esrally.actor INFO LoadGenerator[6] reached join point [JoinPoint(14)].
+2020-01-24 11:14:49,115 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] starts driving now.
+2020-01-24 11:14:49,116 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] starts driving now.
+2020-01-24 11:14:49,117 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] starts driving now.
+2020-01-24 11:14:49,115 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [1/8] drivers reached join point [14/15].
+2020-01-24 11:14:49,113 ActorAddr-(T|:33293)/PID:83 esrally.actor INFO LoadGenerator[4] reached join point [JoinPoint(14)].
+2020-01-24 11:14:49,119 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] starts driving now.
+2020-01-24 11:14:49,120 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] starts driving now.
+2020-01-24 11:14:49,116 ActorAddr-(T|:41267)/PID:80 esrally.actor INFO LoadGenerator[1] reached join point [JoinPoint(14)].
+2020-01-24 11:14:49,117 ActorAddr-(T|:44609)/PID:82 esrally.actor INFO LoadGenerator[3] reached join point [JoinPoint(14)].
+2020-01-24 11:14:49,118 ActorAddr-(T|:43351)/PID:84 esrally.actor INFO LoadGenerator[5] reached join point [JoinPoint(14)].
+2020-01-24 11:14:49,120 ActorAddr-(T|:46087)/PID:86 esrally.actor INFO LoadGenerator[7] reached join point [JoinPoint(14)].
+2020-01-24 11:14:49,120 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [2/8] drivers reached join point [14/15].
+2020-01-24 11:14:49,121 ActorAddr-(T|:44693)/PID:81 esrally.actor INFO LoadGenerator[2] reached join point [JoinPoint(14)].
+2020-01-24 11:14:49,121 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [3/8] drivers reached join point [14/15].
+2020-01-24 11:14:49,134 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] starts driving now.
+2020-01-24 11:14:49,126 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [4/8] drivers reached join point [14/15].
+2020-01-24 11:14:49,127 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [5/8] drivers reached join point [14/15].
+2020-01-24 11:14:49,135 ActorAddr-(T|:37979)/PID:79 esrally.actor INFO LoadGenerator[0] is executing [percolator_with_content_ignore_me].
+2020-01-24 11:14:49,128 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [6/8] drivers reached join point [14/15].
+2020-01-24 11:14:49,128 ActorAddr-(T|:38849)/PID:77 esrally.driver.driver INFO [7/8] drivers reached join point [14/15].
+2020-01-24 11:14:49,136 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO Choosing [deterministic scheduler] for [percolator_with_content_ignore_me].
+2020-01-24 11:14:49,136 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO Creating iteration-count based schedule with [deterministic] distribution for [percolator_with_content_ignore_me] with [10] warmup iterations and [100] iterations.
+2020-01-24 11:14:49,139 ActorAddr-(T|:37979)/PID:79 esrally.driver.driver INFO iteration-count-based schedule will determine when the schedule for [percolator_with_content_ignore_me] terminates.

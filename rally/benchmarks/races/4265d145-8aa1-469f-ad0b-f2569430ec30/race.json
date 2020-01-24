@@ -1,0 +1,22 @@
+{
+ "rally-version": "1.4.0",
+ "environment": "local",
+ "trial-id": "4265d145-8aa1-469f-ad0b-f2569430ec30",
+ "trial-timestamp": "20200124T111223Z",
+ "race-id": "4265d145-8aa1-469f-ad0b-f2569430ec30",
+ "race-timestamp": "20200124T111223Z",
+ "pipeline": "benchmark-only",
+ "user-tags": {},
+ "track": "percolator",
+ "car": [
+  "external"
+ ],
+ "cluster": {
+  "revision": "3ae9ac9a93c95bd0cdc054951cf95d88e1e18d96",
+  "distribution-version": "7.5.1",
+  "distribution-flavor": "default",
+  "team-revision": null
+ },
+ "track-revision": "ec69176",
+ "challenge": "append-no-conflicts"
+}
