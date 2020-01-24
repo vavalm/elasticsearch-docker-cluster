@@ -59,6 +59,37 @@ services:
     networks:
       - elastic
 
+  kibana:
+    image: 'docker.elastic.co/kibana/kibana:7.5.1'
+    container_name: kibana
+    environment:
+      SERVER_NAME: kibana
+      ELASTICSEARCH_URL: http://esmaster:9200
+    ports:
+      - '5601:5601'
+    networks:
+      - elastic
+
+  headPlugin:
+    image: 'mobz/elasticsearch-head:5'
+    container_name: head
+    ports:
+      - '9100:9100'
+    networks:
+      - elastic
+
+#  rally:
+#    image: elastic/rally:${RALLY_VERSION}
+#    container_name: rally
+#    command: ${TEST_COMMAND}
+#    volumes:
+#      - rally:/rally/.rally
+#    networks:
+#      - elastic
+#    depends_on:
+#      elasticsearch_master:
+#        condition: service_healthy
+
 volumes:
   datamaster:
     driver: local
