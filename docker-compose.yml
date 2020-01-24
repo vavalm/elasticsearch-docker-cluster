@@ -2,16 +2,17 @@
 
 version: '2.2'
 services:
-  elasticsearch_master:
+  esslave0:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.5.1
-    container_name: esmaster
+    container_name: esslave0
     environment:
-      - node.name=esmaster
+      - node.name=esslave0
       - cluster.name=es-docker-cluster
       - discovery.seed_hosts=esslave1,esslave2
-      - cluster.initial_master_nodes=esmaster,esslave1,esslave2
+      - cluster.initial_master_nodes=esslave0,esslave1,esslave2
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    cpus: 1
     ulimits:
       memlock:
         soft: -1
@@ -28,10 +29,11 @@ services:
     environment:
       - node.name=esslave1
       - cluster.name=es-docker-cluster
-      - discovery.seed_hosts=esmaster,esslave2
-      - cluster.initial_master_nodes=esmaster,esslave1,esslave2
+      - discovery.seed_hosts=esslave0,esslave2
+      - cluster.initial_master_nodes=esslave0,esslave1,esslave2
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    cpus: 1
     ulimits:
       memlock:
         soft: -1
@@ -46,10 +48,11 @@ services:
     environment:
       - node.name=esslave2
       - cluster.name=es-docker-cluster
-      - discovery.seed_hosts=esmaster,esslave1
-      - cluster.initial_master_nodes=esmaster,esslave1,esslave2
+      - discovery.seed_hosts=esslave0,esslave1
+      - cluster.initial_master_nodes=esslave0,esslave1,esslave2
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    cpus: 1
     ulimits:
       memlock:
         soft: -1
@@ -59,17 +62,19 @@ services:
     networks:
       - elastic
 
+# Web interface to display the statistics
   kibana:
     image: 'docker.elastic.co/kibana/kibana:7.5.1'
     container_name: kibana
     environment:
       SERVER_NAME: kibana
-      ELASTICSEARCH_URL: http://esmaster:9200
+      ELASTICSEARCH_URL: http://esslave0:9200
     ports:
       - '5601:5601'
     networks:
       - elastic
 
+# Web interface to manage elasticsearch cluster
   headPlugin:
     image: 'mobz/elasticsearch-head:5'
     container_name: head
@@ -78,17 +83,18 @@ services:
     networks:
       - elastic
 
+# Container to make the benchmark ofelastic search cluster
   rally:
     image: elastic/rally:latest
     container_name: rally
-    command: "esrally --track=percolator --target-host=esmaster:9200,esslave1:9200,esslave2:9200
+    command: "esrally --track=percolator --target-host=esslave0:9200,esslave1:9200,esslave2:9200
      --pipeline=benchmark-only --report-format=csv --report-file=/benchmarks/result.csv"
     volumes:
       - ./rally:/rally/.rally
     networks:
       - elastic
 #    depends_on:
-#      elasticsearch_master:
+#      esslave0:
 #        condition: service_healthy
 
 volumes:
