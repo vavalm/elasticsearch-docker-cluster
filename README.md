@@ -15,7 +15,8 @@ $ sysctl -w vm.max_map_count=262144
 ``` 
 $ docker-compose up -d
 ```
+
 ### References
 [How elastic search works](https://hub.packtpub.com/how-does-elasticsearch-work-tutorial/)
 [Elastic search official benchmarks](https://elasticsearch-benchmarks.elastic.co/)
-[Rally](https://github.com/ryanmaclean/esrally-docker)
+[Rally](https://github.com/elastic/rally)

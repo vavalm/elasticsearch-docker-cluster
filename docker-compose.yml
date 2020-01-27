@@ -9,7 +9,8 @@ services:
       - node.name=esslave0
       - cluster.name=es-docker-cluster
       - discovery.seed_hosts=esslave1,esslave2
-      - cluster.initial_master_nodes=esslave0,esslave1,esslave2
+#      - cluster.initial_master_nodes=esslave0,esslave1,esslave2
+      - cluster.initial_master_nodes=esslave0,esslave1
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
     cpus: 1
@@ -100,7 +101,7 @@ services:
     image: elastic/rally:latest
     container_name: rally
     command: "esrally --track=metricbeat --target-host=esslave0:9200,esslave1:9200,esslave2:9200 --pipeline=benchmark-only
-    --report-format=csv --report-file=.rally/benchmarks/results/result.csv"
+    --report-format=csv --report-file=.rally/benchmarks/results/2019-27-01-metricbeat-2slave.csv"
     volumes:
       - ./rally:/rally/.rally
     networks:
