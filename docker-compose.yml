@@ -18,11 +18,13 @@ services:
         soft: -1
         hard: -1
     volumes:
-      - datamaster:/usr/share/elasticsearch/data
+      - dataslave0:/usr/share/elasticsearch/data
     ports:
       - 9200:9200
     networks:
       - elastic
+
+
   esslave1:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.5.1
     container_name: esslave1
@@ -42,6 +44,9 @@ services:
       - dataslave1:/usr/share/elasticsearch/data
     networks:
       - elastic
+
+
+
   esslave2:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.5.1
     container_name: esslave2
@@ -62,6 +67,7 @@ services:
     networks:
       - elastic
 
+
 # Web interface to display the statistics
   kibana:
     image: 'docker.elastic.co/kibana/kibana:7.5.1'
@@ -71,8 +77,13 @@ services:
       ELASTICSEARCH_URL: http://esslave0:9200
     ports:
       - '5601:5601'
+    links:
+      - esslave0
+      - esslave1
+      - esslave2
     networks:
       - elastic
+
 
 # Web interface to manage elasticsearch cluster
   headPlugin:
@@ -83,27 +94,31 @@ services:
     networks:
       - elastic
 
+
 # Container to make the benchmark ofelastic search cluster
   rally:
     image: elastic/rally:latest
     container_name: rally
-    command: "esrally --track=percolator --target-host=esslave0:9200,esslave1:9200,esslave2:9200
-     --pipeline=benchmark-only --report-format=csv --report-file=/benchmarks/result.csv"
+    command: "esrally --track=metricbeat --target-host=esslave0:9200,esslave1:9200,esslave2:9200 --pipeline=benchmark-only
+    --report-format=csv --report-file=.rally/benchmarks/results/result.csv"
     volumes:
       - ./rally:/rally/.rally
     networks:
       - elastic
-#    depends_on:
-#      esslave0:
+    links:
+      - kibana
+      - headPlugin
 #        condition: service_healthy
 
+
 volumes:
-  datamaster:
+  dataslave0:
     driver: local
   dataslave1:
     driver: local
   dataslave2:
     driver: local
+
 
 networks:
   elastic:
