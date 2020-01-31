@@ -8,9 +8,9 @@ services:
     environment:
       - node.name=esslave0
       - cluster.name=es-docker-cluster
-      - discovery.seed_hosts=esslave1,esslave2
-#      - cluster.initial_master_nodes=esslave0,esslave1,esslave2
-      - cluster.initial_master_nodes=esslave0,esslave1
+      - discovery.seed_hosts=esslave1,esslave2, esslave3
+#      - cluster.initial_master_nodes=esslave0,esslave1,esslave2, esslave3
+      - cluster.initial_master_nodes=esslave0,esslave1, esslave2, esslave3
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
     cpus: 1
@@ -32,8 +32,8 @@ services:
     environment:
       - node.name=esslave1
       - cluster.name=es-docker-cluster
-      - discovery.seed_hosts=esslave0,esslave2
-      - cluster.initial_master_nodes=esslave0,esslave1,esslave2
+      - discovery.seed_hosts=esslave0,esslave2, esslave3
+      - cluster.initial_master_nodes=esslave0,esslave1,esslave2, esslave3
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
     cpus: 1
@@ -54,8 +54,8 @@ services:
     environment:
       - node.name=esslave2
       - cluster.name=es-docker-cluster
-      - discovery.seed_hosts=esslave0,esslave1
-      - cluster.initial_master_nodes=esslave0,esslave1,esslave2
+      - discovery.seed_hosts=esslave0,esslave1, esslave3
+      - cluster.initial_master_nodes=esslave0,esslave1,esslave2, esslave3
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
     cpus: 1
@@ -67,6 +67,27 @@ services:
       - dataslave2:/usr/share/elasticsearch/data
     networks:
       - elastic
+
+
+  esslave3:
+      image: docker.elastic.co/elasticsearch/elasticsearch:7.5.1
+      container_name: esslave3
+      environment:
+        - node.name=esslave3
+        - cluster.name=es-docker-cluster
+        - discovery.seed_hosts=esslave0,esslave1, esslave2
+        - cluster.initial_master_nodes=esslave0,esslave1,esslave2, esslave3
+        - bootstrap.memory_lock=true
+        - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      cpus: 1
+      ulimits:
+        memlock:
+          soft: -1
+          hard: -1
+      volumes:
+        - dataslave2:/usr/share/elasticsearch/data
+      networks:
+        - elastic
 
 
 # Web interface to display the statistics
@@ -82,6 +103,7 @@ services:
       - esslave0
       - esslave1
       - esslave2
+      - esslave3
     networks:
       - elastic
 
@@ -96,12 +118,12 @@ services:
       - elastic
 
 
-# Container to make the benchmark ofelastic search cluster
+# Container to make the benchmark of elastic search cluster
   rally:
     image: elastic/rally:latest
     container_name: rally
-    command: "esrally --track=metricbeat --target-host=esslave0:9200,esslave1:9200,esslave2:9200 --pipeline=benchmark-only
-    --report-format=csv --report-file=.rally/benchmarks/results/2019-27-01-metricbeat-2slave.csv"
+    command: "esrally --track=metricbeat --target-host=esslave0:9200,esslave1:9200,esslave2:9200,esslave3:9200 --pipeline=benchmark-only
+    --report-format=csv --report-file=.rally/benchmarks/results/2019-27-01-metricbeat-4slave.csv"
     volumes:
       - ./rally:/rally/.rally
     networks:
