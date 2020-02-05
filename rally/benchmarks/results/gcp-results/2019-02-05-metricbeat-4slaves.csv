@@ -31,3 +31,78 @@ error rate,autohisto_agg,100.00,%
 99th percentile service time,date_histogram_agg,33.2220772193978,ms
 100th percentile service time,date_histogram_agg,39.78481097146869,ms
 error rate,date_histogram_agg,100.00,%
+Metric,Task,Value,Unit
+Cumulative indexing time of primary shards,,3.441516666666667,min
+Min cumulative indexing time across primary shards,,3.441516666666667,min
+Median cumulative indexing time across primary shards,,3.441516666666667,min
+Max cumulative indexing time across primary shards,,3.441516666666667,min
+Cumulative indexing throttle time of primary shards,,0,min
+Min cumulative indexing throttle time across primary shards,,0,min
+Median cumulative indexing throttle time across primary shards,,0,min
+Max cumulative indexing throttle time across primary shards,,0,min
+Cumulative merge time of primary shards,,0.05536666666666667,min
+Cumulative merge count of primary shards,,1,
+Min cumulative merge time across primary shards,,0.05536666666666667,min
+Median cumulative merge time across primary shards,,0.05536666666666667,min
+Max cumulative merge time across primary shards,,0.05536666666666667,min
+Cumulative merge throttle time of primary shards,,0,min
+Min cumulative merge throttle time across primary shards,,0,min
+Median cumulative merge throttle time across primary shards,,0,min
+Max cumulative merge throttle time across primary shards,,0,min
+Cumulative refresh time of primary shards,,0.13451666666666667,min
+Cumulative refresh count of primary shards,,18,
+Min cumulative refresh time across primary shards,,0.13451666666666667,min
+Median cumulative refresh time across primary shards,,0.13451666666666667,min
+Max cumulative refresh time across primary shards,,0.13451666666666667,min
+Cumulative flush time of primary shards,,0.09226666666666666,min
+Cumulative flush count of primary shards,,2,
+Min cumulative flush time across primary shards,,0.09226666666666666,min
+Median cumulative flush time across primary shards,,0.09226666666666666,min
+Max cumulative flush time across primary shards,,0.09226666666666666,min
+Total Young Gen GC,,15.827,s
+Total Old Gen GC,,2.555,s
+Store size,,0.5018137665465474,GB
+Translog size,,5.122274160385132e-08,GB
+Heap used for segments,,1.7749156951904297,MB
+Heap used for doc values,,0.8233985900878906,MB
+Heap used for terms,,0.575383186340332,MB
+Heap used for norms,,0,MB
+Heap used for points,,0.12824726104736328,MB
+Heap used for stored fields,,0.24788665771484375,MB
+Segment count,,19,
+Min Throughput,index-append,610.34,docs/s
+Median Throughput,index-append,4143.07,docs/s
+Max Throughput,index-append,4862.08,docs/s
+50th percentile latency,index-append,13716.912403993774,ms
+90th percentile latency,index-append,19345.059366713394,ms
+99th percentile latency,index-append,36365.69130569085,ms
+100th percentile latency,index-append,38056.436709011905,ms
+50th percentile service time,index-append,13716.912403993774,ms
+90th percentile service time,index-append,19345.059366713394,ms
+99th percentile service time,index-append,36365.69130569085,ms
+100th percentile service time,index-append,38056.436709011905,ms
+error rate,index-append,0.00,%
+Min Throughput,autohisto_agg,2.01,ops/s
+Median Throughput,autohisto_agg,2.02,ops/s
+Max Throughput,autohisto_agg,2.04,ops/s
+50th percentile latency,autohisto_agg,8.310058983624913,ms
+90th percentile latency,autohisto_agg,9.072904381901026,ms
+99th percentile latency,autohisto_agg,20.338199906109423,ms
+100th percentile latency,autohisto_agg,31.200076977256685,ms
+50th percentile service time,autohisto_agg,7.718391003436409,ms
+90th percentile service time,autohisto_agg,8.495269404374994,ms
+99th percentile service time,autohisto_agg,19.758549565740452,ms
+100th percentile service time,autohisto_agg,30.58663199772127,ms
+error rate,autohisto_agg,0.00,%
+Min Throughput,date_histogram_agg,2.01,ops/s
+Median Throughput,date_histogram_agg,2.02,ops/s
+Max Throughput,date_histogram_agg,2.04,ops/s
+50th percentile latency,date_histogram_agg,7.483265508199111,ms
+90th percentile latency,date_histogram_agg,8.303033414995298,ms
+99th percentile latency,date_histogram_agg,9.735487873840798,ms
+100th percentile latency,date_histogram_agg,45.97501701209694,ms
+50th percentile service time,date_histogram_agg,6.885957001941279,ms
+90th percentile service time,date_histogram_agg,7.723889299086295,ms
+99th percentile service time,date_histogram_agg,9.11292546923524,ms
+100th percentile service time,date_histogram_agg,45.42517999652773,ms
+error rate,date_histogram_agg,0.00,%

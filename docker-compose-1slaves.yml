@@ -1,0 +1,47 @@
+# run before: sudo sysctl -w vm.max_map_count=262144
+
+version: '2.2'
+services:
+
+  rally:
+    image: elastic/rally:latest
+    container_name: rally
+    command: "esrally --track=metricbeat --target-host=esslave0:9200 --pipeline=benchmark-only
+      --report-format=csv --report-file=.rally/benchmarks/results/2019-02-05-metricbeat-1slaves.csv"
+    volumes:
+      - ./rally:/rally/.rally
+    networks:
+      - elastic
+    links:
+      - esslave0
+
+  esslave0:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.5.1
+    container_name: esslave0
+    environment:
+      - node.name=esslave0
+      - cluster.name=es-docker-cluster
+      - cluster.initial_master_nodes=esslave0
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    cpus: 1
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - dataslave0:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+    networks:
+      - elastic
+
+
+volumes:
+  dataslave0:
+    driver: local
+
+
+networks:
+  elastic:
+    driver: bridge
