@@ -27,7 +27,7 @@ services:
     environment:
       - node.name=esslave0
       - cluster.name=es-docker-cluster
-      - discovery.seed_hosts=esslave0,esslave1,esslave2,esslave3,esslave4,esslave5,esslave6
+      - discovery.seed_hosts=esslave1,esslave2,esslave3,esslave4,esslave5,esslave6
       - cluster.initial_master_nodes=esslave0,esslave1,esslave2,esslave3,esslave4,esslave5,esslave6
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
@@ -50,7 +50,7 @@ services:
     environment:
       - node.name=esslave1
       - cluster.name=es-docker-cluster
-      - discovery.seed_hosts=esslave0,esslave1,esslave2,esslave3,esslave4,esslave5,esslave6
+      - discovery.seed_hosts=esslave0,esslave2,esslave3,esslave4,esslave5,esslave6
       - cluster.initial_master_nodes=esslave0,esslave1,esslave2,esslave3,esslave4,esslave5,esslave6
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
@@ -72,7 +72,7 @@ services:
     environment:
       - node.name=esslave2
       - cluster.name=es-docker-cluster
-      - discovery.seed_hosts=esslave0,esslave1,esslave2,esslave3,esslave4,esslave5,esslave6
+      - discovery.seed_hosts=esslave0,esslave1,esslave3,esslave4,esslave5,esslave6
       - cluster.initial_master_nodes=esslave0,esslave1,esslave2,esslave3,esslave4,esslave5,esslave6
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
@@ -93,7 +93,7 @@ services:
       environment:
         - node.name=esslave3
         - cluster.name=es-docker-cluster
-        - discovery.seed_hosts=esslave0,esslave1,esslave2,esslave3,esslave4,esslave5,esslave6
+        - discovery.seed_hosts=esslave0,esslave1,esslave2,esslave4,esslave5,esslave6
         - cluster.initial_master_nodes=esslave0,esslave1,esslave2,esslave3,esslave4,esslave5,esslave6
         - bootstrap.memory_lock=true
         - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
@@ -103,7 +103,7 @@ services:
           soft: -1
           hard: -1
       volumes:
-        - dataslave2:/usr/share/elasticsearch/data
+        - dataslave3:/usr/share/elasticsearch/data
       networks:
         - elastic
 
@@ -113,7 +113,7 @@ services:
       environment:
         - node.name=esslave4
         - cluster.name=es-docker-cluster
-        - discovery.seed_hosts=esslave0,esslave1,esslave2,esslave3,esslave4,esslave5,esslave6
+        - discovery.seed_hosts=esslave0,esslave1,esslave2,esslave3,esslave5,esslave6
         - cluster.initial_master_nodes=esslave0,esslave1,esslave2,esslave3,esslave4,esslave5,esslave6
         - bootstrap.memory_lock=true
         - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
@@ -123,7 +123,7 @@ services:
           soft: -1
           hard: -1
       volumes:
-        - dataslave2:/usr/share/elasticsearch/data
+        - dataslave4:/usr/share/elasticsearch/data
       networks:
         - elastic
 
@@ -133,7 +133,7 @@ services:
       environment:
         - node.name=esslave5
         - cluster.name=es-docker-cluster
-        - discovery.seed_hosts=esslave0,esslave1,esslave2,esslave3,esslave4,esslave5,esslave6
+        - discovery.seed_hosts=esslave0,esslave1,esslave2,esslave3,esslave4,esslave6
         - cluster.initial_master_nodes=esslave0,esslave1,esslave2,esslave3,esslave4,esslave5,esslave6
         - bootstrap.memory_lock=true
         - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
@@ -143,7 +143,7 @@ services:
           soft: -1
           hard: -1
       volumes:
-        - dataslave2:/usr/share/elasticsearch/data
+        - dataslave5:/usr/share/elasticsearch/data
       networks:
         - elastic
 
@@ -154,7 +154,7 @@ services:
       environment:
         - node.name=esslave6
         - cluster.name=es-docker-cluster
-        - discovery.seed_hosts=esslave0,esslave1,esslave2,esslave3,esslave4,esslave5,esslave6
+        - discovery.seed_hosts=esslave0,esslave1,esslave2,esslave3,esslave4,esslave5
         - cluster.initial_master_nodes=esslave0,esslave1,esslave2,esslave3,esslave4,esslave5,esslave6
         - bootstrap.memory_lock=true
         - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
@@ -164,7 +164,7 @@ services:
           soft: -1
           hard: -1
       volumes:
-        - dataslave2:/usr/share/elasticsearch/data
+        - dataslave6:/usr/share/elasticsearch/data
       networks:
         - elastic
 
@@ -175,6 +175,14 @@ volumes:
   dataslave1:
     driver: local
   dataslave2:
+    driver: local
+  dataslave3:
+    driver: local
+  dataslave4:
+    driver: local
+  dataslave5:
+    driver: local
+  dataslave6:
     driver: local
 
 
