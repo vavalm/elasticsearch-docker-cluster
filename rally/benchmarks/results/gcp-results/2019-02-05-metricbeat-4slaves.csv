@@ -1,0 +1,33 @@
+Metric,Task,Value,Unit
+Total Young Gen GC,,0,s
+Total Old Gen GC,,0,s
+Min Throughput,index-append,0.00,ops/s
+Median Throughput,index-append,3113.08,ops/s
+Max Throughput,index-append,4775.75,ops/s
+50th percentile latency,index-append,52.07617749692872,ms
+90th percentile latency,index-append,4163.633295180626,ms
+99th percentile latency,index-append,12491.995584886754,ms
+100th percentile latency,index-append,14077.13186298497,ms
+50th percentile service time,index-append,52.07617749692872,ms
+90th percentile service time,index-append,4163.633295180626,ms
+99th percentile service time,index-append,12491.995584886754,ms
+100th percentile service time,index-append,14077.13186298497,ms
+error rate,index-append,88.39,%
+50th percentile latency,autohisto_agg,16.488476496306248,ms
+90th percentile latency,autohisto_agg,20.82902211986957,ms
+99th percentile latency,autohisto_agg,33.31477562082001,ms
+100th percentile latency,autohisto_agg,34.132774017052725,ms
+50th percentile service time,autohisto_agg,15.938050506520085,ms
+90th percentile service time,autohisto_agg,20.28896711417483,ms
+99th percentile service time,autohisto_agg,32.71813227591338,ms
+100th percentile service time,autohisto_agg,33.57025299919769,ms
+error rate,autohisto_agg,100.00,%
+50th percentile latency,date_histogram_agg,16.704388515790924,ms
+90th percentile latency,date_histogram_agg,30.731019508675672,ms
+99th percentile latency,date_histogram_agg,33.76357145840306,ms
+100th percentile latency,date_histogram_agg,40.34939399571158,ms
+50th percentile service time,date_histogram_agg,16.146874506375752,ms
+90th percentile service time,date_histogram_agg,30.178097504540347,ms
+99th percentile service time,date_histogram_agg,33.2220772193978,ms
+100th percentile service time,date_histogram_agg,39.78481097146869,ms
+error rate,date_histogram_agg,100.00,%

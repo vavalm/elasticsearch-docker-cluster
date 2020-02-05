@@ -2,14 +2,33 @@
 
 version: '2.2'
 services:
+
+  rally:
+    image: elastic/rally:latest
+    container_name: rally
+    command: "esrally --track=metricbeat --target-host=esslave0:9200,esslave1:9200,esslave2:9200,esslave3:9200,esslave4:9200,esslave5:9200,esslave6:9200 --pipeline=benchmark-only
+      --report-format=csv --report-file=.rally/benchmarks/results/2019-02-05-metricbeat-7slaves.csv"
+    volumes:
+      - ./rally:/rally/.rally
+    networks:
+      - elastic
+    links:
+      - esslave0
+      - esslave1
+      - esslave2
+      - esslave3
+      - esslave4
+      - esslave5
+      - esslave6
+
   esslave0:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.5.1
     container_name: esslave0
     environment:
       - node.name=esslave0
       - cluster.name=es-docker-cluster
-      - discovery.seed_hosts=esslave1,esslave2, esslave3
-      - cluster.initial_master_nodes=esslave0,esslave1,esslave2, esslave3
+      - discovery.seed_hosts=esslave0,esslave1,esslave2,esslave3,esslave4,esslave5,esslave6
+      - cluster.initial_master_nodes=esslave0,esslave1,esslave2,esslave3,esslave4,esslave5,esslave6
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
     cpus: 1
@@ -31,8 +50,8 @@ services:
     environment:
       - node.name=esslave1
       - cluster.name=es-docker-cluster
-      - discovery.seed_hosts=esslave0,esslave2,esslave3
-      - cluster.initial_master_nodes=esslave0,esslave1,esslave2, esslave3
+      - discovery.seed_hosts=esslave0,esslave1,esslave2,esslave3,esslave4,esslave5,esslave6
+      - cluster.initial_master_nodes=esslave0,esslave1,esslave2,esslave3,esslave4,esslave5,esslave6
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
     cpus: 1
@@ -53,8 +72,8 @@ services:
     environment:
       - node.name=esslave2
       - cluster.name=es-docker-cluster
-      - discovery.seed_hosts=esslave0,esslave1, esslave3
-      - cluster.initial_master_nodes=esslave0,esslave1,esslave2, esslave3
+      - discovery.seed_hosts=esslave0,esslave1,esslave2,esslave3,esslave4,esslave5,esslave6
+      - cluster.initial_master_nodes=esslave0,esslave1,esslave2,esslave3,esslave4,esslave5,esslave6
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
     cpus: 1
@@ -74,8 +93,48 @@ services:
       environment:
         - node.name=esslave3
         - cluster.name=es-docker-cluster
-        - discovery.seed_hosts=esslave0,esslave1, esslave2
-        - cluster.initial_master_nodes=esslave0,esslave1,esslave2
+        - discovery.seed_hosts=esslave0,esslave1,esslave2,esslave3,esslave4,esslave5,esslave6
+        - cluster.initial_master_nodes=esslave0,esslave1,esslave2,esslave3,esslave4,esslave5,esslave6
+        - bootstrap.memory_lock=true
+        - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      cpus: 1
+      ulimits:
+        memlock:
+          soft: -1
+          hard: -1
+      volumes:
+        - dataslave2:/usr/share/elasticsearch/data
+      networks:
+        - elastic
+
+  esslave4:
+      image: docker.elastic.co/elasticsearch/elasticsearch:7.5.1
+      container_name: esslave4
+      environment:
+        - node.name=esslave4
+        - cluster.name=es-docker-cluster
+        - discovery.seed_hosts=esslave0,esslave1,esslave2,esslave3,esslave4,esslave5,esslave6
+        - cluster.initial_master_nodes=esslave0,esslave1,esslave2,esslave3,esslave4,esslave5,esslave6
+        - bootstrap.memory_lock=true
+        - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      cpus: 1
+      ulimits:
+        memlock:
+          soft: -1
+          hard: -1
+      volumes:
+        - dataslave2:/usr/share/elasticsearch/data
+      networks:
+        - elastic
+
+  esslave5:
+      image: docker.elastic.co/elasticsearch/elasticsearch:7.5.1
+      container_name: esslave5
+      environment:
+        - node.name=esslave5
+        - cluster.name=es-docker-cluster
+        - discovery.seed_hosts=esslave0,esslave1,esslave2,esslave3,esslave4,esslave5,esslave6
+        - cluster.initial_master_nodes=esslave0,esslave1,esslave2,esslave3,esslave4,esslave5,esslave6
         - bootstrap.memory_lock=true
         - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
       cpus: 1
@@ -89,48 +148,25 @@ services:
         - elastic
 
 
-# Web interface to display the statistics
-  kibana:
-    image: 'docker.elastic.co/kibana/kibana:7.5.1'
-    container_name: kibana
-    environment:
-      SERVER_NAME: kibana
-      ELASTICSEARCH_URL: http://esslave0:9200
-    ports:
-      - '5601:5601'
-    links:
-      - esslave0
-      - esslave1
-      - esslave2
-      - esslave3
-    networks:
-      - elastic
-
-
-# Web interface to manage elasticsearch cluster
-  headPlugin:
-    image: 'mobz/elasticsearch-head:5'
-    container_name: head
-    ports:
-      - '9100:9100'
-    networks:
-      - elastic
-
-
-# Container to make the benchmark of elastic search cluster
-  rally:
-    image: elastic/rally:latest
-    container_name: rally
-    command: "esrally --track=metricbeat --target-host=esslave0:9200,esslave1:9200 --pipeline=benchmark-only
-    --report-format=csv --report-file=.rally/benchmarks/results/2019-02-03-metricbeat-2slave.csv"
-    volumes:
-      - ./rally:/rally/.rally
-    networks:
-      - elastic
-    links:
-      - kibana
-      - headPlugin
-#        condition: service_healthy
+  esslave6:
+      image: docker.elastic.co/elasticsearch/elasticsearch:7.5.1
+      container_name: esslave6
+      environment:
+        - node.name=esslave6
+        - cluster.name=es-docker-cluster
+        - discovery.seed_hosts=esslave0,esslave1,esslave2,esslave3,esslave4,esslave5,esslave6
+        - cluster.initial_master_nodes=esslave0,esslave1,esslave2,esslave3,esslave4,esslave5,esslave6
+        - bootstrap.memory_lock=true
+        - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      cpus: 1
+      ulimits:
+        memlock:
+          soft: -1
+          hard: -1
+      volumes:
+        - dataslave2:/usr/share/elasticsearch/data
+      networks:
+        - elastic
 
 
 volumes:
