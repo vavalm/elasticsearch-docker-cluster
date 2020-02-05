@@ -4,3 +4,4 @@
 out
 gen
 rally/benchmarks/data/*
+rally/benchmarks/tracks/*
