@@ -6,8 +6,8 @@ services:
   rally:
     image: elastic/rally:latest
     container_name: rally
-    command: "esrally --track=metricbeat --target-host=esslave0:9200 --pipeline=benchmark-only
-      --report-format=csv --report-file=.rally/benchmarks/results/2019-02-05-metricbeat-1slaves.csv"
+    command: "esrally --track=metricbeat --target-host=${SLAVE_1} --pipeline=benchmark-only
+      --report-format=csv --report-file=.rally/benchmarks/results/${TEST_DATE}-metricbeat-1slaves.csv"
     volumes:
       - ./rally:/rally/.rally
     networks:
